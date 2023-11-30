@@ -1589,4 +1589,8 @@
     }
 
 
-
+    @media (max-width: 768px) {
+        .wrapper .gatsby-image-wrapper img {
+            height: 0;
+        }
+    }
