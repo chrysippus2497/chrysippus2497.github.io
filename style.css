@@ -1446,7 +1446,6 @@
 
     .wrapper .gatsby-image-wrapper img {
         bottom: 0;
-        height: 100%;
         left: 0;
         margin: 0;
         max-width: none;
@@ -1589,8 +1588,3 @@
     }
 
 
-    @media (max-width: 768px) {
-        .wrapper .gatsby-image-wrapper img {
-            height: 0;
-        }
-    }
