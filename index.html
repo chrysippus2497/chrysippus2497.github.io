@@ -1,16 +1,17 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="Rafael Aquino - Web Developer portfolio featuring selected projects, tech stack, and contact details.">
     <title>Rafael Aquino</title>
     <link rel="icon" type="image/x-icon" href="images/faviconCircle.png">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="preconnect" href="https://rsms.me/">
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <noscript>
         <style>
             .gatsby-image-wrapper [data-main-image] {
@@ -25,11 +26,13 @@
 
 </head>
 <body>
+<a class="skip-link" href="#main-content">Skip to content</a>
+<div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
 <div class="cursor" id="cursor"></div>
 <header id="header" >
-    <nav id="nav-menu" >
+    <nav id="nav-menu" aria-label="Primary navigation">
         <div class="headerLogo">
-            <a href="#" >
+            <a href="#home" aria-label="Go to top">
                 <svg width="40" height="40" viewBox="0 0 47 47" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M12.5432 12.0769H28.4389L28.887 12.1049L29.4476 12.2171L30.0296 12.4112L30.7502 12.6885L31.5032 13.1349L32.0056 13.5537L32.5057 14.0541L32.8679 14.528L33.3659 15.303L33.753 16.1605L34.1112 17.1527L34.3333 18.0974L34.3615 18.6601L34.3338 19.2134L34.279 19.8713L34.1959 20.592L34.0281 21.1796L33.6975 22.0341L33.3925 22.672L32.5689 23.9629L32.0662 24.6334L31.1312 25.3818L28.4877 21.5874L28.991 21.0839L29.1673 20.8319L29.2944 20.5266L29.3988 20.1088L29.4516 19.6068V19.1027L29.3985 18.5977L29.3209 18.2093L29.1932 17.9284L28.9845 17.563L28.65 17.1768L28.2663 16.9208L27.8242 16.7387L27.271 16.607L26.36 16.5265H17.7523V21.6992L12.5432 28.6287V17.1768M12.5432 12.0769V12.3316M12.5432 12.0769H4.5144M12.5432 12.3316H12.7969H28.431L28.8542 12.3581L29.3826 12.4638L29.9442 12.6511L30.6395 12.9186L31.3567 13.3438L31.8346 13.7422L32.3147 14.2225L32.6604 14.6748L33.1426 15.4252L33.5179 16.2566L33.8676 17.2256L34.0811 18.1333L34.1074 18.6601L34.0806 19.1965L34.0265 19.8461L33.9463 20.5419L33.7874 21.0983L33.4645 21.9327L33.1705 22.5478L32.3604 23.8175L31.8829 24.4545L31.1842 25.0136L28.8178 21.6167L29.1858 21.2485L29.3907 20.9557L29.5358 20.6072L29.6492 20.1534L29.7053 19.6202V19.0893L29.6496 18.5592L29.5638 18.1303L29.4192 17.812L29.1923 17.4147L28.8189 16.9837L28.3858 16.6948L27.9021 16.4955L27.3117 16.3549L26.3712 16.2719H17.4986V21.6139L12.7969 27.8685V17.1768M12.5432 12.3316H12.5285H4.36316M4.5144 12.0769C8.39173 5.64648 15.4437 1.34615 23.5 1.34615C35.7352 1.34615 45.6538 11.2648 45.6538 23.5C45.6538 25.2016 45.462 26.8584 45.0988 28.45H45.1M4.5144 12.0769C4.46344 12.1614 4.41302 12.2463 4.36316 12.3316M4.5144 12.0769L4.36316 12.3316M4.36316 12.3316H3.96313C7.84174 5.56136 15.1382 1 23.5 1C35.9264 1 46 11.0736 46 23.5C46 25.2007 45.8113 26.8573 45.4538 28.45M44.875 30.2896V30.0362H31.637L22.8672 18.502L11.0385 34.5522H17.2369L23.0314 27.2276L28.6363 34.5522H42.7043M44.875 30.2896L45.4538 28.45M44.875 30.2896H44.5164M43.0455 34.3L42.8476 34.5522H42.7043M43.0455 34.3L35.3607 34.2988H28.7625L23.0347 26.8136L17.1133 34.2988H11.5411L22.8704 18.9262L31.5102 30.2896H44.5164M43.0455 34.3L42.8476 34.75L43.2434 34.3M1.36352 19.45C1.12472 20.7638 1 22.1173 1 23.5C1 35.9264 11.0736 46 23.5 46C32.0126 46 39.4211 41.2727 43.2434 34.3M1.36352 19.45H1.7155M1.36352 19.45L1.7155 17.875L2.125 16.3H12.7969V17.1768M1.7155 19.45C1.47293 20.7631 1.34615 22.1167 1.34615 23.5C1.34615 35.7352 11.2648 45.6538 23.5 45.6538C31.7103 45.6538 38.8774 41.1876 42.7043 34.5522M1.7155 19.45L2.40625 16.7043H12.5432V16.7676V17.1768M43.2434 34.3H42.8476C42.8004 34.3844 42.7526 34.4685 42.7043 34.5522M12.5432 17.1768H12.7969M45.4538 28.45H45.1M45.1 28.45L44.5164 30.2896" stroke="#EF6F5C" stroke-width="1.2"/>
                 </svg>
@@ -37,21 +40,21 @@
         </div>
             <ol class="firstNav">
                 <li>
-                    <a href="#about"><span aria-hidden="true">00. </span>About</a>
+                    <a href="#about" class="nav-link"><span aria-hidden="true">00. </span>About</a>
                 </li>
                 <li>
-                    <a href="#projects"><span aria-hidden="true">01. </span>Projects</a>
+                    <a href="#projects" class="nav-link"><span aria-hidden="true">01. </span>Projects</a>
                 </li>
                 <li>
-                    <a href="#contact"><span aria-hidden="true">02. </span>Contact</a>
+                    <a href="#contact" class="nav-link"><span aria-hidden="true">02. </span>Contact</a>
                 </li>
                 <li>
                     <a class="resume-button" href="./resume/resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
                 </li>
                 <li>
                     <div class="darkModeBg">
-                        <div id="toggleDarkMode" class="lightToggle">
-                            <svg xmlns="http://www.w3.org/2000/svg" id="darkmode" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-sun">
+                        <button type="button" class="toggleDarkMode lightToggle" aria-label="Toggle color theme">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="lightModeIcon feather feather-sun" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <circle cx="12" cy="12" r="5"></circle>
                                 <line x1="12" y1="1" x2="12" y2="3"></line>
                                 <line x1="12" y1="21" x2="12" y2="23"></line>
@@ -62,39 +65,39 @@
                                 <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
                                 <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
                             </svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" id="lightMode" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-moon">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="darkModeIcon feather feather-moon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
                             </svg>
-                        </div>
+                        </button>
                     </div>
                 </li>
             </ol>
-        <div class="hamburger">
+        <button type="button" class="hamburger" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
             <span class="bar"></span>
 
             <span class="bar"></span>
             <span class="bar"></span>
-        </div>
+        </button>
     </nav>
-    <aside aria-hidden="true" class="aside" data-visible="false">
-        <nav>
+    <aside id="mobile-menu" aria-hidden="true" class="aside" data-visible="false">
+        <nav aria-label="Mobile navigation">
             <ol class="">
                 <li>
-                    <a href="#about" class="aside-links"><span aria-hidden="true">00. </span>About</a>
+                    <a href="#about" class="aside-links nav-link"><span aria-hidden="true">00. </span>About</a>
                 </li>
                 <li>
-                    <a href="#projects" class="aside-links"><span aria-hidden="true">01. </span>Projects</a>
+                    <a href="#projects" class="aside-links nav-link"><span aria-hidden="true">01. </span>Projects</a>
                 </li>
                 <li>
-                    <a href="#contact" class="aside-links"><span aria-hidden="true">02. </span>Contact</a>
+                    <a href="#contact" class="aside-links nav-link"><span aria-hidden="true">02. </span>Contact</a>
                 </li>
                 <li>
-                    <a class="resume-button" href="./resume/resume.pdf" target="_blank" rel="noopener noreferrer" style="color: var(--orange); padding: 0.75rem 1rem; margin-bottom: 15px; margin-left: 1px;">Resume</a>
+                    <a class="resume-button mobile-resume-button" href="./resume/resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
                 </li>
                 <li>
                     <div class="darkModeBg">
-                        <div id="toggleDarkMode" class="lightToggle">
-                            <svg xmlns="http://www.w3.org/2000/svg" id="lightMode" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-sun">
+                        <button type="button" class="toggleDarkMode lightToggle" aria-label="Toggle color theme">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="lightModeIcon feather feather-sun" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <circle cx="12" cy="12" r="5"></circle>
                                 <line x1="12" y1="1" x2="12" y2="3"></line>
                                 <line x1="12" y1="21" x2="12" y2="23"></line>
@@ -105,10 +108,10 @@
                                 <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
                                 <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
                             </svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" id="darkMode" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-moon">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="darkModeIcon feather feather-moon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
                             </svg>
-                        </div>
+                        </button>
                     </div>
                 </li>
             </ol>
@@ -162,16 +165,21 @@
     </ul>
 </div>
 
-
-<section class="hero">
+<main id="main-content">
+<section class="hero" id="home">
     <div>
-        <h1>Greetings, I'm</h1>
+        <h1>Hi, my name is</h1>
     </div>
     <div>
         <h2 class="big-heading" id="big-heading">Rafael Aquino.</h2>
     </div>
     <div>
-        <h3 class="big-heading">Crafting for the web is my expertise.</h3>
+        <h3 class="big-heading">I build dependable web products.</h3>
+    </div>
+    <p class="hero-intro">Developer focused on Laravel and modern frontend stacks, turning complex business workflows into fast, intuitive web applications.</p>
+    <div class="hero-cta">
+        <a href="#projects" class="resume-button hero-link">View Projects</a>
+        <a href="#contact" class="hero-link hero-link-secondary">Start a Conversation</a>
     </div>
 </section>
 <div id="about" class="about__StyledAboutSection-sc-1ownso9-0 bNXWUU">
@@ -179,10 +187,10 @@
     <div class="inner">
         <div class="about__StyledText-sc-1ownso9-1 kNIdQM">
             <p>
-                Greetings! I'm Rafael, a passionate creator of digital experiences. My journey into web development began in 2019 when my professor assigned a solo app development project — turns out this experience ignited my love for crafting innovative solutions that come to life on the internet. I thrive on turning ideas into interactive and visually captivating web applications.
+                I’m Rafael, a web developer who enjoys shipping clean, maintainable products that solve real operational problems. Since 2019, I’ve been building systems for schools and businesses where reliability, clarity, and user experience matter every day.
             </p>
             <p>
-                Here are a few tech stacks I’ve been working with recently:
+                Technologies I use most in production:
             </p>
             <ul class="skills-list">
                 <li>Tailwind</li>
@@ -221,16 +229,15 @@
     </div>
 </div>
 <div class="container" id="projects">
-    <h2 class="numbered-heading">Some Things I’ve Crafted</h2>
+    <h2 class="numbered-heading">Selected Projects</h2>
 </div>
 <section id="contact" class="contact__StyledContactSection-sc-1m8df4t-0 fMdyDu">
     <h2 class="numbered-heading overline">What’s Next?</h2>
-    <h2 class="title">Get In Touch</h2>
-<!--
-    <p>Although I’m not currently looking for any new opportunities, my inbox is always open. Whether you have a question or just want to say hi, I’ll try my best to get back to you!</p>
--->
+    <h2 class="title">Let’s Build Something Useful</h2>
+    <p>If you have a product idea, a workflow that needs automation, or a system that needs a solid rebuild, I’d be glad to help.</p>
     <a class="email-link" href="mailto:rafael.aquino.186@gmail.com" rel="noopener noreferrer" target="_blank">Say Hello</a>
 </section>
+</main>
 <footer class="footer">
     <ul class="footerIcons">
         <li>
@@ -269,15 +276,14 @@
             </a>
         </li>-->
     </ul>
+    <p class="footer-text">Built by Rafael Aquino <span id="year"></span></p>
 </footer>
+<button type="button" id="back-to-top" class="back-to-top" aria-label="Back to top">Top</button>
 
 
 
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 <script src="javascript.js" defer></script>
-<script>
-    AOS.init();
-</script>
 <script>
     // Sample data for multiple projects
     const projectsData = [
@@ -369,18 +375,22 @@
 
     // Function to generate HTML for each project
     // Function to generate HTML for each project
-    function generateProjectHTML(project) {
+    function generateProjectHTML(project, index) {
+        const projectNumber = String(index + 1).padStart(2, "0");
         return `
         <div class="project-image" data-aos="fade-down" data-aos-duration="1000" data-aos-once="true">
             <div class="wrapper">
                 <a href="${project.projectLink}"  target="_blank" rel="noopener noreferrer">
-                    <img src="${project.imageSrc}" alt="${project.title}">
+                    <img src="${project.imageSrc}" alt="${project.title}" loading="lazy" decoding="async">
                 </a>
             </div>
         </div>
         <div class="project-content" data-aos="fade-left" data-aos-duration="1000" data-aos-once="true" data-aos-delay="100">
-            <p class="project-featured">Featured Project</p>
-            <h3 class="project-title"><a href="${project.projectLink}" id="project-title-link">${project.title}</a></h3>
+            <div class="project-meta">
+                <p class="project-featured">Featured Project</p>
+                <p class="project-number">Project ${projectNumber}</p>
+            </div>
+            <h3 class="project-title"><a href="${project.projectLink}" class="project-title-link">${project.title}</a></h3>
             <div class="project-description">${project.description}</div>
             <ul class="project-tech-list">
                 ${project.techList.map(tech => `<li class="techList">${tech}</li>`).join('')}
@@ -409,10 +419,10 @@
     // Function to render projects
     function renderProjects() {
         const portfolioContainer = document.getElementById('projects');
-        projectsData.forEach(project => {
+        projectsData.forEach((project, index) => {
             const projectElement = document.createElement('div');
             projectElement.classList.add('grid');
-            projectElement.innerHTML = generateProjectHTML(project);
+            projectElement.innerHTML = generateProjectHTML(project, index);
             portfolioContainer.appendChild(projectElement);
         });
     }
