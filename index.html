@@ -1,453 +1,565 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="description" content="Rafael Aquino - Web Developer portfolio featuring selected projects, tech stack, and contact details.">
-    <title>Rafael Aquino</title>
-    <link rel="icon" type="image/x-icon" href="images/faviconCircle.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#141514">
+    <title>Rafael Aquino — Full-Stack Developer · Network & Systems Administrator</title>
+    <meta name="description"
+        content="Rafael Aquino, full-stack developer and Senior ICT Assistant at UP Diliman. A background in web development, expanded into networks, systems, and infrastructure.">
+    <link rel="canonical" href="https://chrysippus2497.github.io/">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="en_PH">
+    <meta property="og:title" content="Rafael Aquino — Developer roots. Systems perspective.">
+    <meta property="og:description"
+        content="Senior ICT Assistant · Network & Systems Administrator · Full-Stack Developer. Explore institutional systems, websites, and infrastructure experience.">
+    <meta property="og:url" content="https://chrysippus2497.github.io/">
+    <meta property="og:image" content="https://chrysippus2497.github.io/images/social-preview.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Rafael Aquino — Developer roots. Systems perspective.">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Rafael Aquino — Developer roots. Systems perspective.">
+    <meta name="twitter:description"
+        content="Full-stack developer with a growing scope in networks and systems at UP Diliman.">
+    <meta name="twitter:image" content="https://chrysippus2497.github.io/images/social-preview.png">
+    <meta name="twitter:image:alt" content="Rafael Aquino — Developer roots. Systems perspective.">
+    <link rel="icon" type="image/png" href="images/faviconCircle.png">
+    <link rel="preload" href="assets/Calibre-Regular-b0d4cbb1201155ddccc21d1b8059a670.woff2" as="font" type="font/woff2"
+        crossorigin>
+    <link rel="preload" href="assets/Calibre-Semibold-94fc73852539d6733dc0d80252c5e3fb.woff2" as="font"
+        type="font/woff2" crossorigin>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <link rel="preconnect" href="https://rsms.me/">
-    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
-    <noscript>
-        <style>
-            .gatsby-image-wrapper [data-main-image] {
-                opacity: 1!important;
-            }
-
-            .gatsby-image-wrapper [data-placeholder-image] {
-                opacity: 0!important;
-            }
-        </style>
-    </noscript>
-
+    <script src="javascript.js" defer></script>
+    <script
+        type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Rafael Aquino","url":"https://chrysippus2497.github.io/","image":"https://chrysippus2497.github.io/images/rafael-aquino.webp","jobTitle":["Senior ICT Assistant","Network & Systems Administrator","Full-Stack Developer"],"worksFor":{"@type":"Organization","name":"University of the Philippines Diliman — College of Science, Computational Science Research Center"},"alumniOf":{"@type":"CollegeOrUniversity","name":"AMA Computer College Caloocan"},"sameAs":["https://github.com/chrysippus2497","https://codepen.io/devrap2497"],"knowsAbout":["Network infrastructure","Systems administration","Virtualization","Full-stack development","Institutional systems"]}</script>
 </head>
+
 <body>
-<a class="skip-link" href="#main-content">Skip to content</a>
-<div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
-<div class="cursor" id="cursor"></div>
-<header id="header" >
-    <nav id="nav-menu" aria-label="Primary navigation">
-        <div class="headerLogo">
-            <a href="#home" aria-label="Go to top">
-                <svg width="40" height="40" viewBox="0 0 47 47" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12.5432 12.0769H28.4389L28.887 12.1049L29.4476 12.2171L30.0296 12.4112L30.7502 12.6885L31.5032 13.1349L32.0056 13.5537L32.5057 14.0541L32.8679 14.528L33.3659 15.303L33.753 16.1605L34.1112 17.1527L34.3333 18.0974L34.3615 18.6601L34.3338 19.2134L34.279 19.8713L34.1959 20.592L34.0281 21.1796L33.6975 22.0341L33.3925 22.672L32.5689 23.9629L32.0662 24.6334L31.1312 25.3818L28.4877 21.5874L28.991 21.0839L29.1673 20.8319L29.2944 20.5266L29.3988 20.1088L29.4516 19.6068V19.1027L29.3985 18.5977L29.3209 18.2093L29.1932 17.9284L28.9845 17.563L28.65 17.1768L28.2663 16.9208L27.8242 16.7387L27.271 16.607L26.36 16.5265H17.7523V21.6992L12.5432 28.6287V17.1768M12.5432 12.0769V12.3316M12.5432 12.0769H4.5144M12.5432 12.3316H12.7969H28.431L28.8542 12.3581L29.3826 12.4638L29.9442 12.6511L30.6395 12.9186L31.3567 13.3438L31.8346 13.7422L32.3147 14.2225L32.6604 14.6748L33.1426 15.4252L33.5179 16.2566L33.8676 17.2256L34.0811 18.1333L34.1074 18.6601L34.0806 19.1965L34.0265 19.8461L33.9463 20.5419L33.7874 21.0983L33.4645 21.9327L33.1705 22.5478L32.3604 23.8175L31.8829 24.4545L31.1842 25.0136L28.8178 21.6167L29.1858 21.2485L29.3907 20.9557L29.5358 20.6072L29.6492 20.1534L29.7053 19.6202V19.0893L29.6496 18.5592L29.5638 18.1303L29.4192 17.812L29.1923 17.4147L28.8189 16.9837L28.3858 16.6948L27.9021 16.4955L27.3117 16.3549L26.3712 16.2719H17.4986V21.6139L12.7969 27.8685V17.1768M12.5432 12.3316H12.5285H4.36316M4.5144 12.0769C8.39173 5.64648 15.4437 1.34615 23.5 1.34615C35.7352 1.34615 45.6538 11.2648 45.6538 23.5C45.6538 25.2016 45.462 26.8584 45.0988 28.45H45.1M4.5144 12.0769C4.46344 12.1614 4.41302 12.2463 4.36316 12.3316M4.5144 12.0769L4.36316 12.3316M4.36316 12.3316H3.96313C7.84174 5.56136 15.1382 1 23.5 1C35.9264 1 46 11.0736 46 23.5C46 25.2007 45.8113 26.8573 45.4538 28.45M44.875 30.2896V30.0362H31.637L22.8672 18.502L11.0385 34.5522H17.2369L23.0314 27.2276L28.6363 34.5522H42.7043M44.875 30.2896L45.4538 28.45M44.875 30.2896H44.5164M43.0455 34.3L42.8476 34.5522H42.7043M43.0455 34.3L35.3607 34.2988H28.7625L23.0347 26.8136L17.1133 34.2988H11.5411L22.8704 18.9262L31.5102 30.2896H44.5164M43.0455 34.3L42.8476 34.75L43.2434 34.3M1.36352 19.45C1.12472 20.7638 1 22.1173 1 23.5C1 35.9264 11.0736 46 23.5 46C32.0126 46 39.4211 41.2727 43.2434 34.3M1.36352 19.45H1.7155M1.36352 19.45L1.7155 17.875L2.125 16.3H12.7969V17.1768M1.7155 19.45C1.47293 20.7631 1.34615 22.1167 1.34615 23.5C1.34615 35.7352 11.2648 45.6538 23.5 45.6538C31.7103 45.6538 38.8774 41.1876 42.7043 34.5522M1.7155 19.45L2.40625 16.7043H12.5432V16.7676V17.1768M43.2434 34.3H42.8476C42.8004 34.3844 42.7526 34.4685 42.7043 34.5522M12.5432 17.1768H12.7969M45.4538 28.45H45.1M45.1 28.45L44.5164 30.2896" stroke="#EF6F5C" stroke-width="1.2"/>
-                </svg>
-            </a>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <header class="site-header">
+        <div class="navigation wrap">
+            <a class="brand" href="#home" aria-label="Rafael Aquino, home">RA<span>/</span></a>
+            <p class="nav-context" aria-hidden="true"><span id="nav-location">Portfolio</span><span id="nav-position">Index / 06</span></p>
+            <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="navigation-panel" aria-haspopup="dialog" aria-label="Open navigation menu" title="Open menu" hidden>
+                <span class="hamburger-icon" aria-hidden="true"><span></span><span></span><span></span></span>
+            </button>
         </div>
-            <ol class="firstNav">
-                <li>
-                    <a href="#about" class="nav-link"><span aria-hidden="true">00. </span>About</a>
-                </li>
-                <li>
-                    <a href="#projects" class="nav-link"><span aria-hidden="true">01. </span>Projects</a>
-                </li>
-                <li>
-                    <a href="#contact" class="nav-link"><span aria-hidden="true">02. </span>Contact</a>
-                </li>
-                <li>
-                    <a class="resume-button" href="./resume/resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
-                </li>
-                <li>
-                    <div class="darkModeBg">
-                        <button type="button" class="toggleDarkMode lightToggle" aria-label="Toggle color theme">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="lightModeIcon feather feather-sun" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <circle cx="12" cy="12" r="5"></circle>
-                                <line x1="12" y1="1" x2="12" y2="3"></line>
-                                <line x1="12" y1="21" x2="12" y2="23"></line>
-                                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                                <line x1="1" y1="12" x2="3" y2="12"></line>
-                                <line x1="21" y1="12" x2="23" y2="12"></line>
-                                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-                            </svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" class="darkModeIcon feather feather-moon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-                            </svg>
-                        </button>
-                    </div>
-                </li>
-            </ol>
-        <button type="button" class="hamburger" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
-            <span class="bar"></span>
-
-            <span class="bar"></span>
-            <span class="bar"></span>
-        </button>
-    </nav>
-    <aside id="mobile-menu" aria-hidden="true" class="aside" data-visible="false">
-        <nav aria-label="Mobile navigation">
-            <ol class="">
-                <li>
-                    <a href="#about" class="aside-links nav-link"><span aria-hidden="true">00. </span>About</a>
-                </li>
-                <li>
-                    <a href="#projects" class="aside-links nav-link"><span aria-hidden="true">01. </span>Projects</a>
-                </li>
-                <li>
-                    <a href="#contact" class="aside-links nav-link"><span aria-hidden="true">02. </span>Contact</a>
-                </li>
-                <li>
-                    <a class="resume-button mobile-resume-button" href="./resume/resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
-                </li>
-                <li>
-                    <div class="darkModeBg">
-                        <button type="button" class="toggleDarkMode lightToggle" aria-label="Toggle color theme">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="lightModeIcon feather feather-sun" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <circle cx="12" cy="12" r="5"></circle>
-                                <line x1="12" y1="1" x2="12" y2="3"></line>
-                                <line x1="12" y1="21" x2="12" y2="23"></line>
-                                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                                <line x1="1" y1="12" x2="3" y2="12"></line>
-                                <line x1="21" y1="12" x2="23" y2="12"></line>
-                                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-                            </svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" class="darkModeIcon feather feather-moon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-                            </svg>
-                        </button>
-                    </div>
-                </li>
-            </ol>
-        </nav>
-    </aside>
-
-</header>
-
-<div class="logoDiv">
-    <svg id="logo" width="102" height="102" viewBox="0 0 102 102" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M26.6515 25.6154H61.9753L62.9711 25.6777L64.217 25.9269L65.5103 26.3582L67.1115 26.9744L68.7849 27.9665L69.9012 28.8971L71.0127 30.009L71.8176 31.0622L72.9243 32.7844L73.7845 34.69L74.5804 36.895L75.0741 38.9941L75.1366 40.2447L75.0751 41.4743L74.9533 42.9363L74.7686 44.5377L74.3957 45.8437L73.661 47.7424L72.9833 49.1601L71.1531 52.0287L70.036 53.5188L67.9582 55.1818L62.0838 46.7497L63.2022 45.6309L63.5939 45.071L63.8765 44.3925L64.1085 43.464L64.2259 42.3485V41.2282L64.1078 40.1059L63.9352 39.2428L63.6517 38.6186L63.1878 37.8066L62.4443 36.9483L61.5917 36.3796L60.6093 35.9749L59.3801 35.6821L57.3557 35.5034H38.2274V46.9982L26.6515 62.3972V36.9483M26.6515 25.6154V26.1813M26.6515 25.6154H8.80978M26.6515 26.1813H27.2153H61.9577L62.8981 26.2401L64.0725 26.4751L65.3204 26.8913L66.8655 27.4858L68.4594 28.4308L69.5214 29.3161L70.5882 30.3834L71.3563 31.3884L72.4279 33.056L73.2619 34.9035L74.0392 37.0569L74.5136 39.074L74.5721 40.2447L74.5125 41.4366L74.3923 42.8801L74.2139 44.4264L73.8608 45.6628L73.1433 47.5172L72.4899 48.884L70.6898 51.7055L69.6286 53.121L68.0761 54.3636L62.8173 46.8149L63.6351 45.9967L64.0905 45.3459L64.413 44.5716L64.665 43.563L64.7896 42.3783V41.1984L64.6657 40.0203L64.4752 39.0674L64.1537 38.3599L63.6495 37.477L62.8198 36.5193L61.8573 35.8773L60.7824 35.4345L59.4704 35.122L57.3804 34.9375H37.6636V46.8086L27.2153 60.7077V36.9483M26.6515 26.1813H26.619H8.47368M8.80978 25.6154C17.4261 11.3255 33.097 1.76923 51 1.76923C78.1894 1.76923 100.231 23.8106 100.231 51C100.231 54.7814 99.8044 58.4632 98.9972 62H99M8.80978 25.6154C8.69652 25.8032 8.58449 25.9919 8.47368 26.1813M8.80978 25.6154L8.47368 26.1813M8.47368 26.1813H7.58473C16.2039 11.1364 32.4182 1 51 1C78.6142 1 101 23.3858 101 51C101 54.7793 100.581 58.4606 99.7861 62M98.5 66.0881V65.5249H69.0821L49.5938 39.8932L23.3077 75.5604H37.0821L49.9586 59.2836L62.4139 75.5604H93.6763M98.5 66.0881L99.7861 62M98.5 66.0881H97.7031M94.4344 75L93.9947 75.5604H93.6763M94.4344 75L77.357 74.9973H62.6944L49.966 58.3637L36.8072 74.9973H24.4246L49.6009 40.836L68.8005 66.0881H97.7031M94.4344 75L93.9947 76L94.8741 75M1.80783 42C1.27715 44.9195 1 47.9274 1 51C1 78.6142 23.3858 101 51 101C69.9169 101 86.3802 90.4948 94.8741 75M1.80783 42H2.59M1.80783 42L2.59 38.5L3.5 35H27.2153V36.9483M2.59 42C2.05096 44.9179 1.76923 47.9261 1.76923 51C1.76923 78.1894 23.8106 100.231 51 100.231C69.245 100.231 85.1719 90.3058 93.6763 75.5604M2.59 42L4.125 35.8984H26.6515V36.0391V36.9483M94.8741 75H93.9947C93.8897 75.1876 93.7836 75.3744 93.6763 75.5604M26.6515 36.9483H27.2153M99.7861 62H99M99 62L97.7031 66.0881" stroke="#EF6F5C" stroke-width="2"/>
-    </svg>
-</div>
-<div class="socialLinksDiv">
-    <ul class="socialLinks">
-        <li>
-            <a href="https://github.com/chrysippus2497" target="_blank" rel="noopener noreferrer" title="GitHub">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github">
-                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
-                    </path>
-                </svg>
-            </a>
-        </li>
-        <li>
-            <a href="https://www.linkedin.com/rafael-aquino-017623197" target="_blank" rel="noopener noreferrer" title="LinkedIn">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-linkedin">
-                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-                    <rect x="2" y="9" width="4" height="12"></rect>
-                    <circle cx="4" cy="4" r="2"></circle>
-                </svg>
-            </a>
-        </li>
-        <li>
-            <a href="https://codepen.io/devrap2497" target="_blank" rel="noopener noreferrer" title="CodePen">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-codepen">
-                    <polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5 12 2"></polygon>
-                    <line x1="12" y1="22" x2="12" y2="15.5"></line>
-                    <polyline points="22 8.5 12 15.5 2 8.5"></polyline>
-                    <polyline points="2 15.5 12 8.5 22 15.5"></polyline>
-                    <line x1="12" y1="2" x2="12" y2="8.5"></line>
-                </svg>
-            </a>
-        </li>
-        <!--<li>
-            <a href="https://twitter.com/rapidota" target="_blank" rel="noopener noreferrer" title="Twitter"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-twitter">
-                <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z">
-                </path>
-            </svg>
-            </a>
-        </li>-->
-    </ul>
-</div>
-
-<main id="main-content">
-<section class="hero" id="home">
-    <div>
-        <h1>Hi, my name is</h1>
-    </div>
-    <div>
-        <h2 class="big-heading" id="big-heading">Rafael Aquino.</h2>
-    </div>
-    <div>
-        <h3 class="big-heading">I build dependable web products.</h3>
-    </div>
-    <p class="hero-intro">Developer focused on Laravel and modern frontend stacks, turning complex business workflows into fast, intuitive web applications.</p>
-    <div class="hero-cta">
-        <a href="#projects" class="resume-button hero-link">View Projects</a>
-        <a href="#contact" class="hero-link hero-link-secondary">Start a Conversation</a>
-    </div>
-</section>
-<div id="about" class="about__StyledAboutSection-sc-1ownso9-0 bNXWUU">
-    <h2 class="numbered-heading">About Me</h2>
-    <div class="inner">
-        <div class="about__StyledText-sc-1ownso9-1 kNIdQM">
-            <p>
-                I’m Rafael, a web developer who enjoys shipping clean, maintainable products that solve real operational problems. Since 2019, I’ve been building systems for schools and businesses where reliability, clarity, and user experience matter every day.
-            </p>
-            <p>
-                Technologies I use most in production:
-            </p>
-            <ul class="skills-list">
-                <li>Tailwind</li>
-                <li>Alpine</li>
-                <li>Laravel</li>
-                <li>Livewire</li>
-                <li>Vue</li>
-                <li>JavaScript</li>
-                <li>CodeIgniter</li>
-                <li>Filament</li>
-                <li>PHP</li>
-                <li>Pusher</li>
-                <li>Resque</li>
-                <li>Ghostscript</li>
-                <li>FPDI</li>
-                <li>QPDF</li>
-                <!--<li>Git</li>-->
-            </ul>
+        <noscript><nav class="no-script-nav wrap" aria-label="Primary navigation">
+            <a href="#projects">Work</a><a href="#infrastructure">Infrastructure</a><a href="#experience">Experience</a><a href="#expertise">Expertise</a><a href="#about">About</a><a href="resume/resume.pdf" target="_blank" rel="noopener">Résumé ↗</a><a href="#contact">Contact</a>
+        </nav></noscript>
+    </header>
+    <dialog class="menu-dialog" id="navigation-panel" aria-labelledby="menu-heading">
+        <div class="menu-panel">
+            <div class="menu-panel-header"><p class="eyebrow" id="menu-heading">Explore the portfolio</p>
+                <button class="menu-close" type="button" aria-label="Close navigation menu" title="Close menu"><span class="close-icon" aria-hidden="true"></span></button>
+            </div>
+            <p class="menu-intro">Developer roots.<br><span>Systems perspective.</span></p>
+            <nav class="menu-links" id="nav-links" aria-label="Primary navigation">
+                <a href="#projects" data-label="Selected work"><span class="menu-number" aria-hidden="true">01</span><span>Selected work</span><span class="menu-arrow" aria-hidden="true">↗</span></a>
+                <a href="#infrastructure" data-label="Infrastructure"><span class="menu-number" aria-hidden="true">02</span><span>Infrastructure</span><span class="menu-arrow" aria-hidden="true">↗</span></a>
+                <a href="#experience" data-label="Experience"><span class="menu-number" aria-hidden="true">03</span><span>Experience</span><span class="menu-arrow" aria-hidden="true">↗</span></a>
+                <a href="#expertise" data-label="Expertise"><span class="menu-number" aria-hidden="true">04</span><span>Expertise</span><span class="menu-arrow" aria-hidden="true">↗</span></a>
+                <a href="#about" data-label="About"><span class="menu-number" aria-hidden="true">05</span><span>About</span><span class="menu-arrow" aria-hidden="true">↗</span></a>
+                <a href="#contact" data-label="Contact"><span class="menu-number" aria-hidden="true">06</span><span>Let’s talk</span><span class="menu-arrow" aria-hidden="true">↗</span></a>
+            </nav>
+            <div class="menu-footer"><a class="menu-email" href="mailto:rafael.aquino.186@gmail.com">rafael.aquino.186@gmail.com <svg class="email-icon" width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></a>
+                <div class="menu-socials"><a class="social-link" href="https://github.com/chrysippus2497" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile (opens in a new tab)" title="GitHub"><svg class="social-icon" width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a><a class="social-link" href="https://codepen.io/devrap2497" target="_blank" rel="noopener noreferrer" aria-label="CodePen profile (opens in a new tab)" title="CodePen"><svg class="social-icon" width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5 12 2"/><path d="M12 22v-6.5M22 8.5l-10 7-10-7m0 7 10-7 10 7M12 2v6.5"/></svg></a><a class="document-link" href="resume/resume.pdf" target="_blank" rel="noopener">View résumé <span aria-hidden="true">↗</span></a></div>
+            </div>
         </div>
-        <div class="about__StyledPic-sc-1ownso9-2 lbrXps">
-            <div class="wrapper">
-                <div  class="gatsby-image-wrapper gatsby-image-wrapper-constrained img">
-                    <div style="max-width: 500px; display: block;">
-                        <img alt="" role="presentation" aria-hidden="true" src="data:image/svg+xml;charset=utf-8,%3Csvg height='500' width='500' xmlns='http://www.w3.org/2000/svg' version='1.1'%3E%3C/svg%3E" style="max-width: 100%; display: block; position: static;">
+    </dialog>
+    <main id="main-content" tabindex="-1">
+        <section class="hero wrap" id="home" aria-labelledby="hero-title">
+            <div class="hero-copy">
+                <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> Web development & infrastructure
+                </p>
+                <h1 id="hero-title">Rafael Aquino<span class="accent">.</span></h1>
+                <p class="hero-statement">Developer roots.<br><span>Systems perspective.</span></p>
+                <p class="hero-intro">I started in web development, building websites and applications. Today, that work
+                    continues alongside an expanding role in networks, servers, and systems administration.</p>
+                <div class="hero-roles"><strong>Senior ICT Assistant</strong><span>Network & Systems
+                        Administrator</span><span>Full-Stack Developer</span></div>
+                <div class="actions"><a class="button button-primary" href="#projects">View my work <span
+                            aria-hidden="true">↘</span></a><a class="button button-secondary" href="resume/resume.pdf" target="_blank" rel="noopener">View résumé <span aria-hidden="true">↗</span></a></div>
+                <div class="hero-socials"><a class="social-link" href="https://github.com/chrysippus2497" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile (opens in a new tab)" title="GitHub"><svg class="social-icon" width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a><a class="social-link" href="https://codepen.io/devrap2497" target="_blank" rel="noopener noreferrer" aria-label="CodePen profile (opens in a new tab)" title="CodePen"><svg class="social-icon" width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5 12 2"/><path d="M12 22v-6.5M22 8.5l-10 7-10-7m0 7 10-7 10 7M12 2v6.5"/></svg></a></div>
+            </div>
+            <figure class="stack-figure" aria-labelledby="stack-title">
+                <figcaption><span class="eyebrow" id="stack-title">An end-to-end perspective</span><span class="mono">01
+                        — 07</span></figcaption>
+                <ol class="stack-layers">
+                    <li><button type="button" data-layer="network" aria-pressed="false"><span
+                                class="layer-number">01</span><span class="layer-name">Network<small>Aruba · Cisco ·
+                                    UniFi</small></span><span class="layer-icon" aria-hidden="true">⌁</span></button>
+                    </li>
+                    <li><button type="button" data-layer="security" aria-pressed="false"><span
+                                class="layer-number">02</span><span class="layer-name">Security & access<small>pfSense ·
+                                    OpenVPN</small></span><span class="layer-icon" aria-hidden="true">◇</span></button>
+                    </li>
+                    <li><button type="button" data-layer="virtualization" aria-pressed="false"><span
+                                class="layer-number">03</span><span class="layer-name">Virtualization<small>Proxmox
+                                    VE</small></span><span class="layer-icon" aria-hidden="true">▱</span></button></li>
+                    <li><button type="button" data-layer="systems" aria-pressed="false"><span
+                                class="layer-number">04</span><span class="layer-name">Systems<small>Linux ·
+                                    Docker</small></span><span class="layer-icon" aria-hidden="true">▤</span></button>
+                    </li>
+                    <li><button type="button" data-layer="services" aria-pressed="false"><span
+                                class="layer-number">05</span><span class="layer-name">Web services<small>Web servers ·
+                                    Databases</small></span><span class="layer-icon"
+                                aria-hidden="true">≡</span></button></li>
+                    <li><button type="button" data-layer="applications" aria-pressed="true"><span
+                                class="layer-number">06</span><span class="layer-name">Applications<small>Laravel · PHP
+                                    · JavaScript · Vue</small></span><span class="layer-icon"
+                                aria-hidden="true">&lt;/&gt;</span></button></li>
+                    <li><button type="button" data-layer="experience" aria-pressed="false"><span
+                                class="layer-number">07</span><span class="layer-name">User experience<small>The people
+                                    using it all</small></span><span class="layer-icon"
+                                aria-hidden="true">↗</span></button></li>
+                </ol>
+                <p class="stack-detail" id="stack-detail" aria-live="polite">Applications turn infrastructure into
+                    useful tools: institutional workflows, business platforms, and everyday services.</p>
+                <p class="figure-note">Connected areas of experience, not a single project architecture.</p>
+            </figure>
+            <div class="hero-bottom"><span>Currently at <strong>UP Diliman · College of Science / CSRC</strong></span><a
+                    href="#projects">Explore selected work <span aria-hidden="true">↓</span></a></div>
+        </section>
+
+        <section class="section wrap work-section" id="projects" aria-labelledby="work-title">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow"><span>01 /</span> Selected work</p>
+                    <h2 id="work-title">Built for real workflows<span class="accent">.</span></h2>
+                </div>
+                <p>Institutional systems, business platforms, and websites. A body of work that still shapes how I think
+                    about infrastructure.</p>
+            </div>
+            <div class="work-toolbar" hidden>
+                <div class="filters" role="group" aria-label="Filter projects"><button type="button" data-filter="all"
+                        aria-pressed="true">All work <span>08</span></button><button type="button"
+                        data-filter="Institutional systems" aria-pressed="false">Institutional systems</button><button
+                        type="button" data-filter="Business & commerce" aria-pressed="false">Business &
+                        commerce</button><button type="button" data-filter="Web applications" aria-pressed="false">Web
+                        applications</button></div>
+                <p id="project-count" class="mono" aria-live="polite">8 projects</p>
+            </div>
+            <p class="work-note">Screenshots document the original builds. Some original websites and repositories are
+                no longer publicly available.</p>
+            <div class="project-grid" id="project-list">
+                <!-- PROJECTS:START -->
+      <article class="project featured" id="project-cs-resources" data-category="Institutional systems">
+        <a class="project-visual" href="./project-assets/cs-resources-equipment-database.png" data-title="CS Resources &amp; Equipment Database" aria-label="View screenshot of CS Resources &amp; Equipment Database">
+          <picture><source type="image/webp" srcset="project-assets/optimized/cs-resources-640.webp 640w, project-assets/optimized/cs-resources.webp 1280w" sizes="(max-width: 460px) 85vw, (max-width: 760px) 85vw, 550px"><img src="./project-assets/cs-resources-equipment-database.png" alt="CS Resources &amp; Equipment Database — A shared home for laboratory resources across UP Diliman’s College of Science." width="2846" height="1452" loading="lazy" decoding="async"></picture>
+          <span class="image-caption"><span>UP DILIMAN / COLLEGE OF SCIENCE</span><span>View screenshot ↗</span></span>
+        </a>
+        <div class="project-content">
+          <p class="project-meta"><span class="project-number">01</span><span>Institutional system</span></p>
+          <h3>CS Resources &amp; Equipment Database</h3>
+          <p class="project-summary">A shared home for laboratory resources across UP Diliman’s College of Science.</p>
+          <p class="contribution"><span>My contribution</span>Development, maintenance &amp; system administration</p>
+          <details class="project-details"><summary>Project details & technology</summary>
+            <p class="project-description">The CS Resources &amp; Equipment Database is a web-based system built for the University of the Philippines Diliman – College of Science (UPD-CS). It provides a centralized platform for managing, monitoring, and sharing equipment across laboratories and institutes. Designed to promote sustainability, accountability, and inter-institute collaboration, the system enables faculty members to efficiently access, track, and manage institutional resources.</p>
+            <h4>Project stack</h4><ul class="tech-list"><li>Tailwind</li><li>Alpine</li><li>Laravel</li><li>Livewire</li><li>Filament</li><li>Pusher</li><li>Postman</li><li>GitHub Desktop</li><li>Google reCAPTCHA</li><li>Gmail SMTP Mail Server</li></ul>
+          </details>
+          <div class="project-links"><a href="https://csresourcesequipment.com" target="_blank" rel="noopener noreferrer" aria-label="Visit the original CS Resources &amp; Equipment Database website (opens in a new tab)">Original website <span aria-hidden="true">↗</span></a><a href="https://github.com/chrysippus2497/" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile for CS Resources &amp; Equipment Database (opens in a new tab)">GitHub profile <span aria-hidden="true">↗</span></a></div>
+        </div>
+      </article>
+      <article class="project featured" id="project-cs-portal" data-category="Institutional systems">
+        <a class="project-visual" href="./project-assets/cs-centralized-portal.png" data-title="CS Centralized Portal" aria-label="View screenshot of CS Centralized Portal">
+          <picture><source type="image/webp" srcset="project-assets/optimized/cs-portal-640.webp 640w, project-assets/optimized/cs-portal.webp 1280w" sizes="(max-width: 460px) 85vw, (max-width: 760px) 85vw, 550px"><img src="./project-assets/cs-centralized-portal.png" alt="CS Centralized Portal — Academic and administrative document workflows, brought into one portal." width="2852" height="1452" loading="lazy" decoding="async"></picture>
+          <span class="image-caption"><span>UP DILIMAN / COLLEGE OF SCIENCE</span><span>View screenshot ↗</span></span>
+        </a>
+        <div class="project-content">
+          <p class="project-meta"><span class="project-number">02</span><span>Institutional system</span></p>
+          <h3>CS Centralized Portal</h3>
+          <p class="project-summary">Academic and administrative document workflows, brought into one portal.</p>
+          <p class="contribution"><span>My contribution</span>Development, maintenance &amp; system administration</p>
+          <details class="project-details"><summary>Project details & technology</summary>
+            <p class="project-description">The CS Centralized Portal is a web-based platform developed for the University of the Philippines Diliman – College of Science (UPD-CS). It serves as the main system for academic and administrative document processing, aiming to eliminate traditional manual workflows and centralize services for faculty, staff, and students.</p>
+            <h4>Project stack</h4><ul class="tech-list"><li>LAMP</li><li>PHP Mailer</li><li>QPDF</li><li>Resque</li><li>TCPDF</li><li>Ghostscript</li><li>FPDI</li><li>Bootstrap</li><li>Ajax</li><li>jQuery</li><li>Postman</li><li>GitHub Desktop</li><li>Google reCAPTCHA</li><li>Gmail SMTP Mail Server</li></ul>
+          </details>
+          <div class="project-links"><a href="https://cscentralizedportal.com" target="_blank" rel="noopener noreferrer" aria-label="Visit the original CS Centralized Portal website (opens in a new tab)">Original website <span aria-hidden="true">↗</span></a><a href="https://github.com/chrysippus2497/" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile for CS Centralized Portal (opens in a new tab)">GitHub profile <span aria-hidden="true">↗</span></a></div>
+        </div>
+      </article>
+      <article class="project" id="project-aimporo" data-category="Business &amp; commerce">
+        <a class="project-visual" href="./project-assets/aimporo.jpg" data-title="Aimporo Business Technologies, Inc." aria-label="View screenshot of Aimporo Business Technologies, Inc.">
+          <picture><source type="image/webp" srcset="project-assets/optimized/aimporo-640.webp 640w, project-assets/optimized/aimporo.webp 960w" sizes="(max-width: 460px) 85vw, (max-width: 760px) 40vw, 550px"><img src="./project-assets/aimporo.jpg" alt="Aimporo Business Technologies, Inc. — A digital marketplace and productivity tools for entrepreneurs." width="960" height="540" loading="lazy" decoding="async"></picture>
+          <span class="image-caption"><span>PROJECT / 03</span><span>View screenshot ↗</span></span>
+        </a>
+        <div class="project-content">
+          <p class="project-meta"><span class="project-number">03</span><span>Business platform</span></p>
+          <h3>Aimporo Business Technologies, Inc.</h3>
+          <p class="project-summary">A digital marketplace and productivity tools for entrepreneurs.</p>
+          <p class="contribution"><span>My contribution</span>Full-stack development</p>
+          <details class="project-details"><summary>Project details & technology</summary>
+            <p class="project-description">Designed and created a digital marketplace for entrepreneurs. It discusses software products and services to help solopreneurs and businesses grow.
+            <br><br>The website offers Excel templates, software tools, and masterclasses. Some of the products include financial trackers, invoice generators, and project
+            management tools.</p>
+            <h4>Project stack</h4><ul class="tech-list"><li>Tailwind</li><li>Alpine</li><li>Laravel</li><li>Livewire</li><li>Filament</li><li>Postman</li><li>GitHub Desktop</li><li>Google reCAPTCHA</li><li>Google SSO</li><li>Gmail SMTP Mail Server</li></ul>
+          </details>
+          <div class="project-links"><a href="https://aimporo.com" target="_blank" rel="noopener noreferrer" aria-label="Visit the original Aimporo Business Technologies, Inc. website (opens in a new tab)">Original website <span aria-hidden="true">↗</span></a><a href="https://github.com/chrysippus2497/Aimporo-original" target="_blank" rel="noopener noreferrer" aria-label="Repository link for Aimporo Business Technologies, Inc. (opens in a new tab)">Repository link <span aria-hidden="true">↗</span></a></div>
+        </div>
+      </article>
+      <article class="project" id="project-pwise" data-category="Web applications">
+        <a class="project-visual" href="./project-assets/pwise_hero.png" data-title="PWise" aria-label="View screenshot of PWise">
+          <picture><source type="image/webp" srcset="project-assets/optimized/pwise-640.webp 640w, project-assets/optimized/pwise.webp 1280w" sizes="(max-width: 460px) 85vw, (max-width: 760px) 40vw, 550px"><img src="./project-assets/pwise_hero.png" alt="PWise — Budget planning and expense tracking for households and individuals." width="1918" height="939" loading="lazy" decoding="async"></picture>
+          <span class="image-caption"><span>PROJECT / 04</span><span>View screenshot ↗</span></span>
+        </a>
+        <div class="project-content">
+          <p class="project-meta"><span class="project-number">04</span><span>Web application</span></p>
+          <h3>PWise</h3>
+          <p class="project-summary">Budget planning and expense tracking for households and individuals.</p>
+          <p class="contribution"><span>My contribution</span>Web development</p>
+          <details class="project-details"><summary>Project details & technology</summary>
+            <p class="project-description">P-Wise: Smart Budgeting System aims to help users to budget and track the salary and expenses of one household and its members or even for personal use.</p>
+            <h4>Project stack</h4><ul class="tech-list"><li>PHP</li><li>HTML</li><li>CSS</li><li>JavaScript</li><li>jQuery</li><li>Ajax</li><li>Bootstrap</li><li>Gmail SMTP Mail Server</li></ul>
+          </details>
+          <div class="project-links"><a href="https://pwise.com" target="_blank" rel="noopener noreferrer" aria-label="Visit the original PWise website (opens in a new tab)">Original website <span aria-hidden="true">↗</span></a><a href="https://github.com/chrysippus2497/pwise-new" target="_blank" rel="noopener noreferrer" aria-label="Repository link for PWise (opens in a new tab)">Repository link <span aria-hidden="true">↗</span></a></div>
+        </div>
+      </article>
+      <article class="project" id="project-tsibugan" data-category="Business &amp; commerce">
+        <a class="project-visual" href="./project-assets/tsibugan_hero.png" data-title="Tsibugan St." aria-label="View screenshot of Tsibugan St.">
+          <picture><source type="image/webp" srcset="project-assets/optimized/tsibugan-640.webp 640w, project-assets/optimized/tsibugan.webp 1280w" sizes="(max-width: 460px) 85vw, (max-width: 760px) 40vw, 550px"><img src="./project-assets/tsibugan_hero.png" alt="Tsibugan St. — Online ordering, e-wallet payments, and store management for Tsibugan St." width="1900" height="934" loading="lazy" decoding="async"></picture>
+          <span class="image-caption"><span>PROJECT / 05</span><span>View screenshot ↗</span></span>
+        </a>
+        <div class="project-content">
+          <p class="project-meta"><span class="project-number">05</span><span>E-commerce / capstone</span></p>
+          <h3>Tsibugan St.</h3>
+          <p class="project-summary">Online ordering, e-wallet payments, and store management for Tsibugan St.</p>
+          <p class="contribution"><span>My contribution</span>Capstone design &amp; development</p>
+          <details class="project-details"><summary>Project details & technology</summary>
+            <p class="project-description">Developed as my Capstone Project at AMA Computer College Caloocan Campus.<br><br>This E-commerce website for Tsibugan St. enhances credibility, expands market reach, and streamlines product promotion. It ensures seamless transactions with integrated online payments (e.g., Gcash, GrabPay, and Maya) and provides comprehensive management tools for orders, products, stocks, and sales.</p>
+            <h4>Project stack</h4><ul class="tech-list"><li>Laravel</li><li>Filament</li><li>Livewire</li><li>Semaphore SMS Gateway API</li><li>E-wallet Paymongo API</li><li>Google Maps Geolocation API</li><li>Gmail SMTP Mail Server</li><li>Google reCAPTCHA</li><li>Google SSO</li></ul>
+          </details>
+          <div class="project-links"><a href="https://tsibugan-st.com" target="_blank" rel="noopener noreferrer" aria-label="Visit the original Tsibugan St. website (opens in a new tab)">Original website <span aria-hidden="true">↗</span></a><a href="https://github.com/chrysippus2497/tsibugan-st" target="_blank" rel="noopener noreferrer" aria-label="Repository link for Tsibugan St. (opens in a new tab)">Repository link <span aria-hidden="true">↗</span></a></div>
+        </div>
+      </article>
+      <article class="project" id="project-aqua-pura" data-category="Business &amp; commerce">
+        <a class="project-visual" href="./project-assets/aquapura_hero.png" data-title="Aqua Pura" aria-label="View screenshot of Aqua Pura">
+          <picture><source type="image/webp" srcset="project-assets/optimized/aqua-pura-640.webp 640w, project-assets/optimized/aqua-pura.webp 1280w" sizes="(max-width: 460px) 85vw, (max-width: 760px) 40vw, 550px"><img src="./project-assets/aquapura_hero.png" alt="Aqua Pura — Water refilling orders, reservations, and online e-wallet payments." width="1894" height="935" loading="lazy" decoding="async"></picture>
+          <span class="image-caption"><span>PROJECT / 06</span><span>View screenshot ↗</span></span>
+        </a>
+        <div class="project-content">
+          <p class="project-meta"><span class="project-number">06</span><span>E-commerce</span></p>
+          <h3>Aqua Pura</h3>
+          <p class="project-summary">Water refilling orders, reservations, and online e-wallet payments.</p>
+          <p class="contribution"><span>My contribution</span>Online ordering system development</p>
+          <details class="project-details"><summary>Project details & technology</summary>
+            <p class="project-description">Aqua Pura is a Water Refilling Station is located in Quezon City. <br><br> Developed an online ordering system with reservation and online e-wallet payments using Paymongo payment gateway.</p>
+            <h4>Project stack</h4><ul class="tech-list"><li>PHP</li><li>HTML</li><li>CSS</li><li>JavaScript</li><li>jQuery</li><li>Ajax</li><li>Bootstrap</li><li>Gmail SMTP Mail Server</li><li>E-wallet Paymongo API</li><li>Google Maps Geolocation API</li><li>Semaphore SMS Gateway API</li></ul>
+          </details>
+          <div class="project-links"><a href="https://aquapura.com" target="_blank" rel="noopener noreferrer" aria-label="Visit the original Aqua Pura website (opens in a new tab)">Original website <span aria-hidden="true">↗</span></a><a href="https://github.com/chrysippus2497/aquapura" target="_blank" rel="noopener noreferrer" aria-label="Repository link for Aqua Pura (opens in a new tab)">Repository link <span aria-hidden="true">↗</span></a></div>
+        </div>
+      </article>
+      <article class="project" id="project-property-requirements" data-category="Web applications">
+        <a class="project-visual" href="./project-assets/propertyrequirementsph_hero.png" data-title="Property Requirements PH" aria-label="View screenshot of Property Requirements PH">
+          <picture><source type="image/webp" srcset="project-assets/optimized/property-requirements-640.webp 640w, project-assets/optimized/property-requirements.webp 1280w" sizes="(max-width: 460px) 85vw, (max-width: 760px) 40vw, 550px"><img src="./project-assets/propertyrequirementsph_hero.png" alt="Property Requirements PH — Connecting property requirements and budgets with brokers and listings." width="1897" height="925" loading="lazy" decoding="async"></picture>
+          <span class="image-caption"><span>PROJECT / 07</span><span>View screenshot ↗</span></span>
+        </a>
+        <div class="project-content">
+          <p class="project-meta"><span class="project-number">07</span><span>Property platform</span></p>
+          <h3>Property Requirements PH</h3>
+          <p class="project-summary">Connecting property requirements and budgets with brokers and listings.</p>
+          <p class="contribution"><span>My contribution</span>Web development</p>
+          <details class="project-details"><summary>Project details & technology</summary>
+            <p class="project-description">Property Requirements PH envision helping brokers and clients easily find the right listing for them. Our users can specify the requirements and the budget they are looking for to match with brokers. From condominiums to houses, apartments, and more, we provide a wide range of listings that users can adjust to fit their preferences. We are a platform where they can easily connect, resulting in efficiency and a hassle-free experience.</p>
+            <h4>Project stack</h4><ul class="tech-list"><li>Laravel</li><li>Vue</li><li>Gmail SMTP Mail Server</li><li>Semaphore SMS Gateway API</li></ul>
+          </details>
+          <div class="project-links"><a href="https://propertyrequirementsph.com" target="_blank" rel="noopener noreferrer" aria-label="Visit the original Property Requirements PH website (opens in a new tab)">Original website <span aria-hidden="true">↗</span></a><a href="https://github.com/chrysippus2497/propertyrequirementsph" target="_blank" rel="noopener noreferrer" aria-label="Repository link for Property Requirements PH (opens in a new tab)">Repository link <span aria-hidden="true">↗</span></a></div>
+        </div>
+      </article>
+      <article class="project" id="project-hanawan" data-category="Institutional systems">
+        <a class="project-visual" href="./project-assets/hnhs_hero.png" data-title="HANAWAN National High School Verification and Enrollment System" aria-label="View screenshot of HANAWAN National High School Verification and Enrollment System">
+          <picture><source type="image/webp" srcset="project-assets/optimized/hanawan-640.webp 640w, project-assets/optimized/hanawan.webp 1280w" sizes="(max-width: 460px) 85vw, (max-width: 760px) 40vw, 550px"><img src="./project-assets/hnhs_hero.png" alt="HANAWAN National High School Verification and Enrollment System — An enrollment and verification portal for students, teachers, and administrators." width="1897" height="938" loading="lazy" decoding="async"></picture>
+          <span class="image-caption"><span>PROJECT / 08</span><span>View screenshot ↗</span></span>
+        </a>
+        <div class="project-content">
+          <p class="project-meta"><span class="project-number">08</span><span>Academic system</span></p>
+          <h3>HANAWAN National High School Verification and Enrollment System</h3>
+          <p class="project-summary">An enrollment and verification portal for students, teachers, and administrators.</p>
+          <p class="contribution"><span>My contribution</span>Web development</p>
+          <details class="project-details"><summary>Project details & technology</summary>
+            <p class="project-description">A Web Based Online Portal for HANAWAN National High School to have an online enrollment with verification of old/new students. <br><br>Students module, teachers module, admins module, grading module and verifications module.</p>
+            <h4>Project stack</h4><ul class="tech-list"><li>PHP</li><li>HTML</li><li>CSS</li><li>JavaScript</li><li>jQuery</li><li>Ajax</li><li>Bootstrap</li><li>Gmail SMTP Mail Server</li></ul>
+          </details>
+          <div class="project-links"><a href="https://hnhs.com" target="_blank" rel="noopener noreferrer" aria-label="Visit the original HANAWAN National High School Verification and Enrollment System website (opens in a new tab)">Original website <span aria-hidden="true">↗</span></a><a href="https://github.com/chrysippus2497/hnhs" target="_blank" rel="noopener noreferrer" aria-label="Repository link for HANAWAN National High School Verification and Enrollment System (opens in a new tab)">Repository link <span aria-hidden="true">↗</span></a></div>
+        </div>
+      </article>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ItemList","name":"Rafael Aquino — Selected Work","itemListElement":[{"@type":"ListItem","position":1,"item":{"@type":"CreativeWork","name":"CS Resources & Equipment Database","description":"A shared home for laboratory resources across UP Diliman’s College of Science.","url":"https://chrysippus2497.github.io/#project-cs-resources","image":"https://chrysippus2497.github.io/project-assets/cs-resources-equipment-database.png"}},{"@type":"ListItem","position":2,"item":{"@type":"CreativeWork","name":"CS Centralized Portal","description":"Academic and administrative document workflows, brought into one portal.","url":"https://chrysippus2497.github.io/#project-cs-portal","image":"https://chrysippus2497.github.io/project-assets/cs-centralized-portal.png"}},{"@type":"ListItem","position":3,"item":{"@type":"CreativeWork","name":"Aimporo Business Technologies, Inc.","description":"A digital marketplace and productivity tools for entrepreneurs.","url":"https://chrysippus2497.github.io/#project-aimporo","image":"https://chrysippus2497.github.io/project-assets/aimporo.jpg"}},{"@type":"ListItem","position":4,"item":{"@type":"CreativeWork","name":"PWise","description":"Budget planning and expense tracking for households and individuals.","url":"https://chrysippus2497.github.io/#project-pwise","image":"https://chrysippus2497.github.io/project-assets/pwise_hero.png"}},{"@type":"ListItem","position":5,"item":{"@type":"CreativeWork","name":"Tsibugan St.","description":"Online ordering, e-wallet payments, and store management for Tsibugan St.","url":"https://chrysippus2497.github.io/#project-tsibugan","image":"https://chrysippus2497.github.io/project-assets/tsibugan_hero.png"}},{"@type":"ListItem","position":6,"item":{"@type":"CreativeWork","name":"Aqua Pura","description":"Water refilling orders, reservations, and online e-wallet payments.","url":"https://chrysippus2497.github.io/#project-aqua-pura","image":"https://chrysippus2497.github.io/project-assets/aquapura_hero.png"}},{"@type":"ListItem","position":7,"item":{"@type":"CreativeWork","name":"Property Requirements PH","description":"Connecting property requirements and budgets with brokers and listings.","url":"https://chrysippus2497.github.io/#project-property-requirements","image":"https://chrysippus2497.github.io/project-assets/propertyrequirementsph_hero.png"}},{"@type":"ListItem","position":8,"item":{"@type":"CreativeWork","name":"HANAWAN National High School Verification and Enrollment System","description":"An enrollment and verification portal for students, teachers, and administrators.","url":"https://chrysippus2497.github.io/#project-hanawan","image":"https://chrysippus2497.github.io/project-assets/hnhs_hero.png"}}]}</script>
+<!-- PROJECTS:END -->
+            </div>
+        </section>
+
+        <section class="operations-band" id="infrastructure" aria-labelledby="operations-title">
+            <div class="wrap section">
+                <div class="section-heading">
+                    <div>
+                        <p class="eyebrow"><span>02 /</span> Infrastructure & operations</p>
+                        <h2 id="operations-title">Behind the application.<br>Across the infrastructure.</h2>
                     </div>
-                    <div aria-hidden="true"  style="opacity: 0; transition: opacity 500ms linear 0s; background-color: rgb(232, 232, 232); position: absolute; inset: 0px; object-fit: cover;"></div>
-                    <picture>
-                        <source type="image/jpg" srcset="./images/about_me_hero.jpg 125w, ./images/about_me_hero.jpg 250w, ./images/about_me_hero.jpg 500w" sizes="(min-width: 500px) 500px, 100vw">
-                        <source type="image/jpg" srcset="./images/about_me_hero.jpg 125w, ./images/about_me_hero.jpg 250w, ./images/about_me_hero.jpg 500w" sizes="(min-width: 500px) 500px, 100vw">
-                        <img  sizes="(min-width: 500px) 500px, 100vw" decoding="async" src="./images/about_me_hero.jpg" srcset="./images/about_me_hero.jpg 125w, ./images/about_me_hero.jpg 250w, ./images/about_me_hero.jpg 500w" alt="Headshot" style="object-fit: cover; opacity: 1;">
-                    </picture>
-                    <noscript></noscript>
+                    <p>My work now extends into the networks, virtual machines, Linux servers, and production services
+                        that institutional systems depend on.</p>
+                </div>
+                <div class="operations-grid">
+                    <article><span class="operation-symbol" aria-hidden="true">⌁</span>
+                        <h3>Connect & secure</h3>
+                        <p>Enterprise switching, wireless connectivity, network diagnostics, and VPN administration.
+                            Keeping people connected to the services they need.</p>
+                        <p class="operation-tools">Aruba · Cisco Catalyst · UniFi<br>Netgate pfSense · OpenVPN ·
+                            phpIPAM</p>
+                    </article>
+                    <article><span class="operation-symbol" aria-hidden="true">▱</span>
+                        <h3>Provision & maintain</h3>
+                        <p>Virtual machines, Linux servers, and containerized services. Provisioning, monitoring,
+                            snapshots, and backups as part of day-to-day operations.</p>
+                        <p class="operation-tools">Proxmox VE · Linux<br>Docker · Docker Compose</p>
+                    </article>
+                    <article><span class="operation-symbol" aria-hidden="true">↗</span>
+                        <h3>Deploy & support</h3>
+                        <p>Production websites, web services, databases, and certificates. Diagnosing application and
+                            infrastructure issues with the same end-to-end perspective.</p>
+                        <p class="operation-tools">NGINX · Apache · PHP-FPM<br>WordPress · MySQL / MariaDB ·
+                            PostgreSQL</p>
+                    </article>
                 </div>
             </div>
-        </div>
-    </div>
-</div>
-<div class="container" id="projects">
-    <h2 class="numbered-heading">Selected Projects</h2>
-</div>
-<section id="contact" class="contact__StyledContactSection-sc-1m8df4t-0 fMdyDu">
-    <h2 class="numbered-heading overline">What’s Next?</h2>
-    <h2 class="title">Let’s Build Something Useful</h2>
-    <p>If you have a product idea, a workflow that needs automation, or a system that needs a solid rebuild, I’d be glad to help.</p>
-    <a class="email-link" href="mailto:rafael.aquino.186@gmail.com" rel="noopener noreferrer" target="_blank">Say Hello</a>
-</section>
-</main>
-<footer class="footer">
-    <ul class="footerIcons">
-        <li>
-            <a href="https://github.com/chrysippus2497" target="_blank" rel="noopener noreferrer" title="GitHub">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github">
-                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
-                    </path>
-                </svg>
-            </a>
-        </li>
-        <li>
-            <a href="https://www.linkedin.com/rafael-aquino-017623197" target="_blank" rel="noopener noreferrer" title="LinkedIn">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-linkedin">
-                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-                    <rect x="2" y="9" width="4" height="12"></rect>
-                    <circle cx="4" cy="4" r="2"></circle>
-                </svg>
-            </a>
-        </li>
-        <li>
-            <a href="https://codepen.io/devrap2497" target="_blank" rel="noopener noreferrer" title="CodePen">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-codepen">
-                    <polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5 12 2"></polygon>
-                    <line x1="12" y1="22" x2="12" y2="15.5"></line>
-                    <polyline points="22 8.5 12 15.5 2 8.5"></polyline>
-                    <polyline points="2 15.5 12 8.5 22 15.5"></polyline>
-                    <line x1="12" y1="2" x2="12" y2="8.5"></line>
-                </svg>
-            </a>
-        </li>
-        <!--<li>
-            <a href="https://twitter.com/rapidota" target="_blank" rel="noopener noreferrer" title="Twitter"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-twitter">
-                <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z">
-                </path>
-            </svg>
-            </a>
-        </li>-->
-    </ul>
-    <p class="footer-text">Built by Rafael Aquino <span id="year"></span></p>
-</footer>
-<button type="button" id="back-to-top" class="back-to-top" aria-label="Back to top">Top</button>
+        </section>
 
-
-
-<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-<script src="javascript.js" defer></script>
-<script>
-    // Sample data for multiple projects
-    const projectsData = [
-        {
-            title: "CS Resources & Equipment Database",
-            imageSrc: "./project-assets/cs-resources-equipment-database.png",
-            projectLink: "https://csresourcesequipment.com",
-            description: `The CS Resources & Equipment Database is a web-based system built for the University of the Philippines Diliman – College of Science (UPD-CS). It provides a centralized platform for managing, monitoring, and sharing equipment across laboratories and institutes. Designed to promote sustainability, accountability, and inter-institute collaboration, the system enables faculty members to efficiently access, track, and manage institutional resources.`,
-            techList: ["Tailwind", "Alpine", "Laravel", "Livewire", "Filament", "Pusher", "Postman", "GitHub Desktop", "Google reCAPTCHA", "Gmail SMTP Mail Server"],
-            githubLink: "https://github.com/chrysippus2497/",
-            externalLink: "https://csresourcesequipment.com"
-        },
-
-        {
-            title: "CS Centralized Portal",
-            imageSrc: "./project-assets/cs-centralized-portal.png",
-            projectLink: "https://cscentralizedportal.com",
-            description: `The CS Centralized Portal is a web-based platform developed for the University of the Philippines Diliman – College of Science (UPD-CS). It serves as the main system for academic and administrative document processing, aiming to eliminate traditional manual workflows and centralize services for faculty, staff, and students.`,
-            techList: ["LAMP", "PHP Mailer", "QPDF", "Resque", "TCPDF", "Ghostscript", "FPDI", "Bootstrap", "Ajax", "jQuery", "Postman", "GitHub Desktop", "Google reCAPTCHA", "Gmail SMTP Mail Server"],
-            githubLink: "https://github.com/chrysippus2497/",
-            externalLink: "https://cscentralizedportal.com",
-        },
-        
-        {
-            title: "Aimporo Business Technologies, Inc.",
-            imageSrc: "./project-assets/aimporo.jpg",
-            projectLink: "https://aimporo.com",
-            description: `Designed and created a digital marketplace for entrepreneurs. It discusses software products and services to help solopreneurs and businesses grow.
-            <br><br>The website offers Excel templates, software tools, and masterclasses. Some of the products include financial trackers, invoice generators, and project
-            management tools.`,
-            techList: ["Tailwind", "Alpine", "Laravel", "Livewire", "Filament", "Postman", "GitHub Desktop", "Google reCAPTCHA", "Google SSO", "Gmail SMTP Mail Server"],
-            githubLink: "https://github.com/chrysippus2497/Aimporo-original",
-            externalLink: "https://aimporo.com"
-        },
-
-        {
-            title: "PWise",
-            imageSrc: "./project-assets/pwise_hero.png",
-            projectLink: "https://pwise.com",
-            description: `P-Wise: Smart Budgeting System aims to help users to budget and track the salary and expenses of one household and its members or even for personal use.`,
-            techList: ["PHP", "HTML", "CSS", "JavaScript", "jQuery", "Ajax", "Bootstrap", "Gmail SMTP Mail Server"],
-            githubLink: "https://github.com/chrysippus2497/pwise-new",
-            externalLink: "https://pwise.com"
-        },
-        {
-            title: "Tsibugan St.",
-            imageSrc: "./project-assets/tsibugan_hero.png",
-            projectLink: "https://tsibugan-st.com",
-            description: `Developed as my Capstone Project at AMA Computer College Caloocan Campus.<br><br>This E-commerce website for Tsibugan St. enhances credibility, expands market reach, and streamlines product promotion. It ensures seamless transactions with integrated online payments (e.g., Gcash, GrabPay, and Maya) and provides comprehensive management tools for orders, products, stocks, and sales.`,
-            techList: ["Laravel", "Filament", "Livewire", "Semaphore SMS Gateway API", "E-wallet Paymongo API", "Google Maps Geolocation API", "Gmail SMTP Mail Server", "Google reCAPTCHA", "Google SSO"],
-            githubLink: "https://github.com/chrysippus2497/tsibugan-st",
-            externalLink: "https://tsibugan-st.com"
-        },
-        {
-            title: "Aqua Pura",
-            imageSrc: "./project-assets/aquapura_hero.png",
-            projectLink: "https://aquapura.com",
-            description: `Aqua Pura is a Water Refilling Station is located in Quezon City. <br><br> Developed an online ordering system with reservation and online e-wallet payments using Paymongo payment gateway.`,
-            techList: ["PHP", "HTML", "CSS", "JavaScript", "jQuery", "Ajax", "Bootstrap", "Gmail SMTP Mail Server", "E-wallet Paymongo API", "Google Maps Geolocation API", "Semaphore SMS Gateway API"],
-            githubLink: "https://github.com/chrysippus2497/aquapura",
-            externalLink: "https://aquapura.com"
-        },
-        {
-            title: "Property Requirements PH",
-            imageSrc: "./project-assets/propertyrequirementsph_hero.png",
-            projectLink: "https://propertyrequirementsph.com",
-            description: `Property Requirements PH envision helping brokers and clients easily find the right listing for them. Our users can specify the requirements and the budget they are looking for to match with brokers. From condominiums to houses, apartments, and more, we provide a wide range of listings that users can adjust to fit their preferences. We are a platform where they can easily connect, resulting in efficiency and a hassle-free experience.`,
-            techList: ["Laravel", "Vue", "Gmail SMTP Mail Server", "Semaphore SMS Gateway API"],
-            githubLink: "https://github.com/chrysippus2497/propertyrequirementsph",
-            externalLink: "https://propertyrequirementsph.com"
-        },
-
-        {
-            title: "HANAWAN National High School Verification and Enrollment System",
-            imageSrc: "./project-assets/hnhs_hero.png",
-            projectLink: "https://hnhs.com",
-            description: `A Web Based Online Portal for HANAWAN National High School to have an online enrollment with verification of old/new students. <br><br>Students module, teachers module, admins module, grading module and verifications module.`,
-            techList: ["PHP", "HTML", "CSS", "JavaScript", "jQuery", "Ajax", "Bootstrap", "Gmail SMTP Mail Server"],
-            githubLink: "https://github.com/chrysippus2497/hnhs",
-            externalLink: "https://hnhs.com"
-        },
-
-
-
-
-
-        // Add more project data as needed
-    ];
-
-    // Function to generate HTML for each project
-    // Function to generate HTML for each project
-    function generateProjectHTML(project, index) {
-        const projectNumber = String(index + 1).padStart(2, "0");
-        return `
-        <div class="project-image" data-aos="fade-down" data-aos-duration="1000" data-aos-once="true">
-            <div class="wrapper">
-                <a href="${project.projectLink}"  target="_blank" rel="noopener noreferrer">
-                    <img src="${project.imageSrc}" alt="${project.title}" loading="lazy" decoding="async">
-                </a>
+        <section class="section wrap experience-section" id="experience" aria-labelledby="experience-title">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow"><span>03 /</span> Experience</p>
+                    <h2 id="experience-title">A wider view of the stack.</h2>
+                </div>
+                <p>From building websites to maintaining institutional applications and operating the infrastructure
+                    around them.</p>
             </div>
-        </div>
-        <div class="project-content" data-aos="fade-left" data-aos-duration="1000" data-aos-once="true" data-aos-delay="100">
-            <div class="project-meta">
-                <p class="project-featured">Featured Project</p>
-                <p class="project-number">Project ${projectNumber}</p>
+            <div class="timeline">
+                <article class="career current">
+                    <div class="career-date"><span class="current-label">Current</span>
+                        <p>Aug 2026 — Present</p>
+                    </div>
+                    <div class="career-body">
+                        <p class="career-domain">Infrastructure + applications</p>
+                        <h3>Senior ICT Assistant</h3>
+                        <p class="career-role">Network & Systems Administrator · Full-Stack Developer</p>
+                        <p class="organization">University of the Philippines Diliman<br>College of Science —
+                            Computational Science Research Center</p>
+                        <div class="responsibilities">
+                            <div>
+                                <h4>Network & access</h4>
+                                <p>Enterprise switching, UniFi wireless, VPN services, and connectivity troubleshooting.
+                                </p>
+                            </div>
+                            <div>
+                                <h4>Systems & virtualization</h4>
+                                <p>Proxmox virtual machines, Linux servers, Docker services, monitoring, and backups.
+                                </p>
+                            </div>
+                            <div>
+                                <h4>Web infrastructure</h4>
+                                <p>Institutional websites, databases, certificates, deployments, and production support.
+                                </p>
+                            </div>
+                            <div>
+                                <h4>Technical operations</h4>
+                                <p>Incident response, infrastructure documentation, and coordination across university
+                                    units.</p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <article class="career">
+                    <div class="career-date">
+                        <p>Jul 2025 — Jul 2026</p>
+                    </div>
+                    <div class="career-body">
+                        <h3>Project Staff</h3>
+                        <p class="career-role">Full-Stack Developer & System Administrator</p>
+                        <p class="organization">University of the Philippines Diliman — College of Science</p>
+                        <p>Maintained the CS Centralized Portal and Resources & Equipment Database, administered servers
+                            and backups, integrated OAuth 2.0 authentication, and automated administrative workflows
+                            with Google Apps Script.</p>
+                    </div>
+                </article>
+                <article class="career">
+                    <div class="career-date">
+                        <p>Jul 2024 — Jun 2025</p>
+                    </div>
+                    <div class="career-body">
+                        <h3>Junior ICT Assistant</h3>
+                        <p class="career-role">Full-Stack Developer</p>
+                        <p class="organization">University of the Philippines Diliman — College of Science</p>
+                        <p>Refactored legacy backend modules, improved institutional workflows and interfaces, and
+                            strengthened PDF document processing with TCPDF and QPDF.</p>
+                    </div>
+                </article>
+                <article class="career">
+                    <div class="career-date">
+                        <p>Jul 2023 — Mar 2024</p>
+                    </div>
+                    <div class="career-body">
+                        <h3>Full-Stack Developer</h3>
+                        <p class="organization">Aimporo Business Technologies, Inc.</p>
+                        <p>Built a digital marketplace and web-based productivity tools, and customized CRM and
+                            marketing automation workflows in collaboration with business stakeholders.</p>
+                    </div>
+                </article>
+                <article class="career">
+                    <div class="career-date">
+                        <p>Dec 2021 — 2024</p>
+                    </div>
+                    <div class="career-body">
+                        <h3>Freelance Web Developer</h3>
+                        <p class="organization">Self-employed</p>
+                        <p>Developed client websites from requirements through handover, including responsive
+                            interfaces, new builds, and maintenance of existing projects.</p>
+                    </div>
+                </article>
+                <article class="career">
+                    <div class="career-date">
+                        <p>Jan 2021 — Dec 2021</p>
+                    </div>
+                    <div class="career-body">
+                        <h3>Graphic Designer & Technical Support Specialist</h3>
+                        <p class="organization">Qing Tian Enterprises Corp.</p>
+                        <p>Created marketing and promotional graphics, and provided hardware diagnostics, software
+                            troubleshooting, and system upgrades.</p>
+                    </div>
+                </article>
             </div>
-            <h3 class="project-title"><a href="${project.projectLink}" class="project-title-link">${project.title}</a></h3>
-            <div class="project-description">${project.description}</div>
-            <ul class="project-tech-list">
-                ${project.techList.map(tech => `<li class="techList">${tech}</li>`).join('')}
-            </ul>
-            <div class="project-links">
-                <a href="${project.githubLink}" title="GitHub" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
-                    <!-- Replace this comment with your GitHub SVG code -->
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github">
-                        <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
-                    </svg>
-                </a>
-                <a href="${project.externalLink}" target="_blank" title="External Link" rel="noopener noreferrer">
-                    <!-- Replace this comment with your External Link SVG code -->
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-external-link">
-                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                        <polyline points="15 3 21 3 21 9"></polyline>
-                        <line x1="10" y1="14" x2="21" y2="3"></line>
-                    </svg>
-                </a>
+        </section>
+
+        <section class="section wrap expertise-section" id="expertise" aria-labelledby="expertise-title">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow"><span>04 /</span> Technical expertise</p>
+                    <h2 id="expertise-title">The tools behind the work.</h2>
+                </div>
+                <p>Grouped by how I use them — from network operations and server administration to application
+                    development.</p>
             </div>
-        </div>
-    `;
-    }
+            <div class="expertise-primary">
+                <article><span class="mono accent">I / Infrastructure</span>
+                    <h3>Networks & systems</h3>
+                    <dl>
+                        <dt>Network & infrastructure</dt>
+                        <dd>Aruba · Cisco Catalyst · Ubiquiti UniFi Network · Netgate pfSense · OpenVPN · phpIPAM
+                        </dd>
+                        <dt>Virtualization & containers</dt>
+                        <dd>Proxmox VE · Docker · Docker Compose</dd>
+                        <dt>Remote administration</dt>
+                        <dd>Termius · SSH · SFTP · AnyDesk · UniFi Network Application</dd>
+                    </dl>
+                </article>
+                <article><span class="mono accent">II / Services</span>
+                    <h3>Servers & web infrastructure</h3>
+                    <dl>
+                        <dt>Server & web administration</dt>
+                        <dd>Linux · NGINX · Apache · PHP-FPM · WordPress · LAMP · XAMPP</dd>
+                        <dt>Databases</dt>
+                        <dd>MySQL · MariaDB · PostgreSQL</dd>
+                        <dt>Backend & API</dt>
+                        <dd>REST APIs · MVC · OAuth 2.0 / SSO · CRUD systems · Relational database design</dd>
+                    </dl>
+                </article>
+                <article><span class="mono accent">III / Applications</span>
+                    <h3>Full-stack development</h3>
+                    <dl>
+                        <dt>Languages</dt>
+                        <dd>JavaScript · PHP · HTML5 · CSS3 · SQL · Google Apps Script</dd>
+                        <dt>Frameworks & libraries</dt>
+                        <dd>Laravel · Livewire · CodeIgniter · Vue.js · Alpine.js · jQuery · Tailwind CSS · Bootstrap ·
+                            Filament · Ajax</dd>
+                    </dl>
+                </article>
+            </div>
+            <div class="expertise-secondary">
+                <div>
+                    <h3>PDF & document processing</h3>
+                    <p>TCPDF · QPDF · FPDI · Ghostscript · PyMuPDF · Pillow</p>
+                </div>
+                <div>
+                    <h3>Version control</h3>
+                    <p>Git · GitHub · GitHub Desktop</p>
+                </div>
+                <div>
+                    <h3>Development & database tools</h3>
+                    <p>PhpStorm · Visual Studio Code · Sublime Text · Postman · DBeaver · Laravel Herd · Homebrew</p>
+                </div>
+                <div>
+                    <h3>Project & documentation</h3>
+                    <p>Jira · Notion</p>
+                </div>
+            </div>
+        </section>
 
+        <section class="section wrap about-section" id="about" aria-labelledby="about-title">
+            <div class="about-grid">
+                <div class="about-photo"><img src="images/rafael-aquino.webp" alt="Portrait of Rafael Aquino"
+                        width="500" height="501" loading="lazy" decoding="async">
+                    <p class="mono">Rafael Aquino / Beyond the code</p>
+                </div>
+                <div class="about-copy">
+                    <p class="eyebrow"><span>05 /</span> About</p>
+                    <h2 id="about-title">It started with the web.<br>The scope keeps growing.</h2>
+                    <p>I started with software: websites, business tools, and systems for schools. That background still
+                        guides my work — understanding a workflow, building the right interface, and making the
+                        application useful to the people relying on it.</p>
+                    <p>At UP Diliman, that perspective has expanded into enterprise networks, wireless infrastructure,
+                        virtualization, Linux servers, and VPN environments. I now work with both the application and
+                        the systems that keep it running.</p>
+                    <p class="about-emphasis">Development helps me understand what people use.<br>Infrastructure helps
+                        me understand what it depends on.</p>
+                    <div class="education"><span class="eyebrow">Education</span>
+                        <h3>Bachelor of Science in Information Technology</h3>
+                        <p>AMA Computer College Caloocan<br>Core Member — Google Developer Student Clubs (GDSC)</p>
+                    </div>
+                </div>
+            </div>
+            <div class="certifications">
+                <div>
+                    <p class="eyebrow">Continued learning</p>
+                    <h3>Cisco Networking Academy</h3>
+                </div>
+                <ul>
+                    <li><span>Networking Essentials</span><time datetime="2021-01">Jan 2021</time></li>
+                    <li><span>Introduction to Cybersecurity</span><time datetime="2021-09">Sep 2021</time></li>
+                    <li><span>Cybersecurity Essentials</span><time datetime="2021-09">Sep 2021</time></li>
+                    <li><span>Emerging Technologies Workshop: Model Driven Programmability</span><time
+                            datetime="2021-08">Aug 2021</time></li>
+                    <li><span>NDG Linux Essentials</span><time datetime="2022-06">Jun 2022</time></li>
+                    <li><span>Introduction to Networks</span><time datetime="2022-08">Aug 2022</time></li>
+                </ul>
+            </div>
+        </section>
 
-    // Function to render projects
-    function renderProjects() {
-        const portfolioContainer = document.getElementById('projects');
-        projectsData.forEach((project, index) => {
-            const projectElement = document.createElement('div');
-            projectElement.classList.add('grid');
-            projectElement.innerHTML = generateProjectHTML(project, index);
-            portfolioContainer.appendChild(projectElement);
-        });
-    }
-
-    // Initialize AOS (Animate on Scroll) library
-    AOS.init();
-
-    // Call the function to render projects
-    renderProjects();
-</script>
-
-<script>
-
-    // Get all elements with the class numbered-heading
-    let numberedHeadings2 = document.querySelectorAll('.numbered-heading');
-
-    // Iterate over each element and update the counter
-    counterValue = 0;
-    numberedHeadings2.forEach((element, index) => {
-        // Increment the counter for each element
-        const counterValue = index + 1;
-
-        // Update the counter value in the style attribute
-        element.style.counterIncrement = `section ${counterValue}`;
-    });
-</script>
+        <section class="contact-section" id="contact" aria-labelledby="contact-title">
+            <div class="wrap section">
+                <p class="eyebrow"><span>06 /</span> Get in touch</p>
+                <div class="contact-layout">
+                    <h2 id="contact-title">Let’s build.<br>Operate.<br><span class="accent">Make it better.</span></h2>
+                    <div class="contact-copy">
+                        <p>Have a website, a system, or an infrastructure challenge in mind? Let’s talk about what it
+                            needs.</p><a class="contact-email"
+                            href="mailto:rafael.aquino.186@gmail.com">rafael.aquino.186@gmail.com <svg class="email-icon" width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></a>
+                        <div class="contact-links"><a class="social-link" href="https://github.com/chrysippus2497" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile (opens in a new tab)" title="GitHub"><svg class="social-icon" width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a><a class="social-link" href="https://codepen.io/devrap2497" target="_blank" rel="noopener noreferrer" aria-label="CodePen profile (opens in a new tab)" title="CodePen"><svg class="social-icon" width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5 12 2"/><path d="M12 22v-6.5M22 8.5l-10 7-10-7m0 7 10-7 10 7M12 2v6.5"/></svg></a><a class="document-link" href="resume/resume.pdf"
+                                download="Rafael_Aquino_Resume.pdf">Download résumé <span aria-hidden="true">↓</span></a></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="site-footer wrap">
+        <p>© <span id="year">2026</span> Rafael Aquino</p><span>Rooted in development. Expanded into systems.</span><a
+            href="#home">Back to top ↑</a>
+    </footer>
+    <dialog class="image-dialog" aria-labelledby="preview-title">
+        <div class="preview-header">
+            <h2 id="preview-title">Project screenshot</h2><button type="button" class="preview-close"
+                aria-label="Close screenshot preview" title="Close preview"><span class="close-icon" aria-hidden="true"></span></button>
+        </div><img id="preview-image" alt="" width="1280" height="660">
+        <p class="mono">Original project screenshot</p>
+    </dialog>
 </body>
+
 </html>

@@ -1,0 +1,53 @@
+# Rafael Aquino — Portfolio
+
+A dark-first, static portfolio grounded in web development, reflecting an expanded role in networks and systems administration. The site runs directly on GitHub Pages, with no framework, backend, runtime dependencies, or deployment build step.
+
+## Preview
+
+```sh
+python3 -m http.server 8765 --bind 127.0.0.1
+```
+
+Visit `http://127.0.0.1:8765/`. The checked-in HTML also contains every project without JavaScript.
+
+## Navigation and résumé access
+
+The header uses an icon-only hamburger at every width. It opens a native modal side panel with six numbered section links, a current-section indicator, contact icons, and a direct résumé link. Escape, the X control, and the desktop backdrop dismiss it; focus returns to the opener or moves to the selected section. The background is inert and scroll-locked while the menu is open. A simple navigation fallback remains available without JavaScript.
+
+GitHub and CodePen use inline SVG icons with accessible labels, hover titles, and 44px touch targets. Primary document and project actions retain descriptive text. “View résumé” opens the full PDF in a new tab; the contact section also provides a download. There is no embedded résumé viewer or preview-image dependency.
+
+## Maintain the content
+
+- `index.html`: professional identity, experience, infrastructure, expertise, education, certifications, contact, and metadata.
+- `projects.json`: authoritative project records. Original descriptions, technology lists, screenshots, and URLs are retained. New presentation fields contain supported categories, summaries, and contributions.
+- `scripts/build-projects.mjs`: renders project records and project structured data into the marked region in `index.html`. Do not edit that region by hand.
+- `style.css`: local fonts, design tokens, layout, breakpoints, interactions, reduced-motion, and print styles.
+- `javascript.js`: progressive enhancement for the all-width modal navigation, filters, stack explanation, and screenshot previews.
+- `project-assets/`: original screenshots. `optimized/` contains 640px and up-to-1280px WebP derivatives; original images remain available in the screenshot viewer.
+- `resume/resume.pdf`: public copy of the supplied latest résumé. The internal VPN service label was removed to respect the brief's confidentiality requirement; all three pages and professional content remain. The source PDF outside this repository was not modified.
+- `images/social-preview.png`: social sharing image using the site's design and local typography.
+
+After editing project records:
+
+```sh
+node scripts/build-projects.mjs
+node scripts/build-projects.mjs --check
+node scripts/check-integrity.mjs
+node --check javascript.js
+```
+
+Adding a project requires an original image, responsive derivatives, accurate dimensions, a stable `id`, and supported factual fields. Keep descriptions as text; `<br>` is the only supported markup. Project metadata is HTML-escaped during rendering.
+
+The supplied résumé is authoritative for career details. The repository is authoritative for project history; the redesign brief also explicitly supplies tools such as Caddy and Let's Encrypt. Do not infer that every tool is used in every project.
+
+## Deployment
+
+Publish the repository root through the existing GitHub Pages configuration. All local asset references are relative. The `.nojekyll` file requests static serving. No package installation or build service is required. Regenerate and commit `index.html` whenever `projects.json` changes.
+
+The canonical and sharing URLs assume `https://chrysippus2497.github.io/`; update those if the public domain changes. No deployment or push was performed during this redesign.
+
+## Historical links and assets
+
+Original project URLs have been retained and labeled as original websites or repository links, rather than promising live demos or publicly accessible source. Two institutional GitHub URLs point to the profile and are labeled accordingly. Several historical URLs are unavailable; see `QA.md` before replacing them. The original malformed LinkedIn URL returned 404 and is not shown in the redesigned site. No substitute account was invented.
+
+Original portraits, favicon/logo variations, and project screenshots are preserved as branding and historical source assets. Runtime AOS, external font requests, obsolete theme/cursor/splash code, generated legacy selectors, and duplicate inline project-rendering code have been removed. All four bundled font files are used. Existing ignored `node_modules` is not a site dependency; QA tools were installed separately under the temporary directory.

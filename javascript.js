@@ -1,500 +1,143 @@
-const header = document.getElementById("header");
-const navMenu = document.getElementById("nav-menu");
-const hamburger = document.querySelector(".hamburger");
-const aside = document.querySelector(".aside");
-const body = document.body;
-const html = document.documentElement;
-const hero = document.querySelector(".hero");
-const about = document.getElementById("about");
-const container = document.querySelector(".container");
-const footer = document.querySelector(".footer");
-const bigHeader = document.getElementById("big-heading");
-const title = document.querySelector(".title");
-const firstNav = document.querySelector(".firstNav");
-const numberedHeadings = document.querySelectorAll(".numbered-heading");
-const logoDiv = document.querySelector(".logoDiv");
-const cursorFlash = document.getElementById("cursor");
-const scrollProgress = document.getElementById("scroll-progress");
-const backToTop = document.getElementById("back-to-top");
-const year = document.getElementById("year");
+/* Progressive enhancement: all portfolio content is already present in the HTML. */
+(() => {
+  'use strict';
+  document.documentElement.classList.add('js');
+  document.getElementById('year').textContent = new Date().getFullYear();
 
-const modeToggles = document.querySelectorAll(".toggleDarkMode");
-const darkModeBg = document.querySelectorAll(".darkModeBg");
-const lightModeIcons = document.querySelectorAll(".lightModeIcon");
-const darkModeIcons = document.querySelectorAll(".darkModeIcon");
-
-const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-const mobileQuery = window.matchMedia("(max-width: 900px)");
-
-const sectionsToBlur = [container, about, hero, footer].filter(Boolean);
-const sectionIds = ["about", "projects", "contact"];
-
-let lastScrollPosition = 0;
-let mode = localStorage.getItem("mode");
-
-const addMediaListener = (query, callback) => {
-    if (typeof query.addEventListener === "function") {
-        query.addEventListener("change", callback);
+  const menu = document.querySelector('.menu-toggle');
+  const navigation = document.getElementById('nav-links');
+  const menuDialog = document.getElementById('navigation-panel');
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  let menuDestination = null;
+  menu.hidden = false;
+  menu.addEventListener('click', () => {
+    if (menuDialog.open) return;
+    menuDialog.showModal();
+    menu.setAttribute('aria-expanded', 'true');
+    document.body.classList.add('navigation-open');
+    menuDialog.querySelector('.menu-close').focus();
+  });
+  menuDialog.querySelector('.menu-close').addEventListener('click', () => menuDialog.close());
+  menuDialog.addEventListener('keydown', event => {
+    if (event.key !== 'Tab') return;
+    const controls = [...menuDialog.querySelectorAll('a[href], button:not([disabled])')];
+    const first = controls[0];
+    const last = controls.at(-1);
+    if (event.shiftKey && document.activeElement === first) {
+      event.preventDefault();
+      last.focus();
+    } else if (!event.shiftKey && document.activeElement === last) {
+      event.preventDefault();
+      first.focus();
+    }
+  });
+  menuDialog.addEventListener('click', event => {
+    const rect = menuDialog.getBoundingClientRect();
+    if (event.target === menuDialog && (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom)) menuDialog.close();
+  });
+  menuDialog.addEventListener('close', () => {
+    menu.setAttribute('aria-expanded', 'false');
+    document.body.classList.remove('navigation-open');
+    if (menuDestination) {
+      const target = document.querySelector(menuDestination);
+      target.setAttribute('tabindex', '-1');
+      target.focus({ preventScroll: true });
+      target.scrollIntoView({ behavior: reducedMotion.matches ? 'instant' : 'smooth' });
+      if (location.hash !== menuDestination) history.pushState(null, '', menuDestination);
+      menuDestination = null;
     } else {
-        query.addListener(callback);
+      menu.focus({ preventScroll: true });
     }
-};
-
-const getProjectElements = () => ({
-    descriptions: document.querySelectorAll(".project-description"),
-    titles: document.querySelectorAll(".project-title"),
-    techLists: document.querySelectorAll(".project-tech-list"),
-    techItems: document.querySelectorAll(".techList"),
-});
-
-const setMenuState = (isOpen) => {
-    if (!hamburger || !aside || !navMenu) {
-        return;
+  });
+  menuDialog.addEventListener('click', event => {
+    const link = event.target.closest('a');
+    if (!link) return;
+    if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+    if (link.getAttribute('href').startsWith('#')) {
+      event.preventDefault();
+      menuDestination = link.getAttribute('href');
     }
+    menuDialog.close();
+  });
 
-    hamburger.classList.toggle("active", isOpen);
-    navMenu.classList.toggle("active", isOpen);
-    hamburger.setAttribute("aria-expanded", String(isOpen));
-    hamburger.setAttribute("aria-label", isOpen ? "Close menu" : "Open menu");
-
-    aside.setAttribute("aria-hidden", String(!isOpen));
-    aside.setAttribute("data-visible", String(isOpen));
-    aside.style.visibility = isOpen ? "visible" : "hidden";
-
-    body.classList.toggle("menu-open", isOpen);
-
-    if (isOpen) {
-        body.style.overflow = "hidden";
-        html.style.overflow = "hidden";
-    } else {
-        body.style.removeProperty("overflow");
-        html.style.removeProperty("overflow");
-    }
-
-};
-
-const closeHamburgerMenu = () => setMenuState(false);
-
-const setToggleVisualState = (isDark) => {
-    modeToggles.forEach((toggle) => {
-        toggle.classList.toggle("lightToggle", !isDark);
-        toggle.style.background = isDark ? "#fff" : "var(--orange)";
-        toggle.style.left = isDark ? "24px" : "0";
+  const layers = {
+    network: 'Connectivity is the foundation. Enterprise switching and wireless networks connect people, devices, and services.',
+    security: 'Access connects that foundation to the right people. Firewall and VPN administration support secure remote connectivity.',
+    virtualization: 'Virtualization gives services a place to run. Proxmox brings virtual machines, resources, snapshots, and backups together.',
+    systems: 'Linux servers and containers provide the operating environment. Maintenance and monitoring support the services above them.',
+    services: 'Web servers and databases serve the application. Configuration, certificates, and production support keep those pieces working together.',
+    applications: 'Applications turn infrastructure into useful tools: institutional workflows, business platforms, and everyday services.',
+    experience: 'People complete the picture. Clear interfaces and practical workflows make the underlying technology useful.'
+  };
+  document.querySelectorAll('[data-layer]').forEach(button => {
+    button.addEventListener('click', () => {
+      document.querySelectorAll('[data-layer]').forEach(layer => layer.setAttribute('aria-pressed', String(layer === button)));
+      document.getElementById('stack-detail').textContent = layers[button.dataset.layer];
     });
+  });
 
-    darkModeBg.forEach((background) => {
-        background.style.background = isDark ? "var(--orange)" : "#E2E1E7";
+  document.querySelector('.work-toolbar').hidden = false;
+  const projects = [...document.querySelectorAll('.project')];
+  document.querySelectorAll('[data-filter]').forEach(button => {
+    button.addEventListener('click', () => {
+      document.querySelectorAll('[data-filter]').forEach(filter => filter.setAttribute('aria-pressed', String(filter === button)));
+      let count = 0;
+      projects.forEach(project => {
+        project.hidden = button.dataset.filter !== 'all' && project.dataset.category !== button.dataset.filter;
+        if (!project.hidden) count++;
+      });
+      document.getElementById('project-count').textContent = `${count} project${count === 1 ? '' : 's'}`;
     });
+  });
 
-    lightModeIcons.forEach((icon) => {
-        icon.style.display = isDark ? "block" : "none";
+  const dialog = document.querySelector('.image-dialog');
+  let previewTrigger;
+  if (typeof dialog.showModal === 'function') {
+    document.querySelectorAll('.project-visual').forEach(link => {
+      link.addEventListener('click', event => {
+        // Preserve opening the original image in a new tab with modifier keys.
+        if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+        event.preventDefault();
+        previewTrigger = link;
+        const image = document.getElementById('preview-image');
+        image.src = link.href;
+        image.alt = link.querySelector('img').alt;
+        const thumbnail = link.querySelector('img');
+        image.width = Number(thumbnail.getAttribute('width'));
+        image.height = Number(thumbnail.getAttribute('height'));
+        document.getElementById('preview-title').textContent = link.dataset.title;
+        dialog.showModal();
+        document.querySelector('.preview-close').focus();
+      });
     });
-
-    darkModeIcons.forEach((icon) => {
-        icon.style.display = isDark ? "none" : "block";
+    document.querySelector('.preview-close').addEventListener('click', () => dialog.close());
+    dialog.addEventListener('click', event => {
+      const rect = dialog.getBoundingClientRect();
+      if (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom) dialog.close();
     });
-};
+    dialog.addEventListener('close', () => previewTrigger?.focus({ preventScroll: true }));
+  }
 
-const applyProjectCardColors = (isDark) => {
-    const { descriptions, titles, techLists, techItems } = getProjectElements();
-    const isMobile = mobileQuery.matches;
-
-    descriptions.forEach((description) => {
-        if (isMobile) {
-            description.style.background = "transparent";
-            description.style.color = isDark ? "var(--light-slate)" : "var(--violet)";
-            return;
-        }
-
-        description.style.background = isDark ? "var(--light-violet)" : "rgba(255, 255, 255, 0.84)";
-        description.style.color = isDark ? "var(--light-slate)" : "var(--violet)";
+  // Track section starts so long project lists retain the correct active navigation link.
+  const sectionLinks = [...navigation.querySelectorAll('a[href^="#"]')];
+  const sectionCount = String(sectionLinks.length).padStart(2, '0');
+  let scheduled = false;
+  function updateNavigation() {
+    const atBottom = Math.ceil(window.scrollY + window.innerHeight) >= document.documentElement.scrollHeight - 2;
+    const current = atBottom ? sectionLinks.at(-1) : sectionLinks.filter(link => document.querySelector(link.hash).getBoundingClientRect().top <= 140).at(-1);
+    sectionLinks.forEach(link => {
+      if (link === current) link.setAttribute('aria-current', 'location');
+      else link.removeAttribute('aria-current');
     });
-
-    titles.forEach((projectTitle) => {
-        if (isMobile) {
-            projectTitle.style.color = isDark ? "var(--light-slate)" : "var(--light-violet)";
-            return;
-        }
-
-        if (isDark) {
-            projectTitle.style.color = "var(--light-slate)";
-            return;
-        }
-
-        projectTitle.style.color = "var(--light-violet)";
-    });
-
-    techLists.forEach((list) => {
-        list.style.color = isMobile ? (isDark ? "var(--light-slate)" : "var(--slate)") : "var(--slate)";
-    });
-
-    techItems.forEach((item) => {
-        item.style.color = isMobile ? (isDark ? "var(--light-slate)" : "#687798") : "#687798";
-    });
-};
-
-const disableDarkMode = () => {
-    if (logoDiv) {
-        logoDiv.style.background = "#f7f4fb";
+    document.getElementById('nav-location').textContent = current?.dataset.label || 'Portfolio';
+    document.getElementById('nav-position').textContent = current ? `${String(sectionLinks.indexOf(current) + 1).padStart(2, '0')} / ${sectionCount}` : `Index / ${sectionCount}`;
+    scheduled = false;
+  }
+  window.addEventListener('scroll', () => {
+    if (!scheduled) {
+      scheduled = true;
+      requestAnimationFrame(updateNavigation);
     }
-
-    if (cursorFlash) {
-        cursorFlash.style.visibility = "hidden";
-    }
-
-    if (bigHeader) {
-        bigHeader.style.color = "#373550";
-    }
-
-    if (title) {
-        title.style.color = "rgb(55, 53, 80)";
-    }
-
-    if (aside) {
-        aside.style.background = "#f8f5fb";
-        aside.style.color = "var(--violet)";
-    }
-
-    if (firstNav) {
-        firstNav.style.color = "var(--violet)";
-    }
-
-    numberedHeadings.forEach((element) => {
-        element.style.color = "var(--light-violet)";
-    });
-
-    body.classList.add("lightBody");
-    html.classList.add("lightRoot");
-
-    if (header) {
-        header.classList.add("lightHeader");
-    }
-
-    if (navMenu) {
-        navMenu.classList.add("lightNav");
-    }
-
-    setToggleVisualState(false);
-    applyProjectCardColors(false);
-
-    localStorage.setItem("mode", "disabled");
-};
-
-const enableDarkMode = () => {
-    if (logoDiv) {
-        logoDiv.style.background = "var(--violet)";
-    }
-
-    if (cursorFlash) {
-        cursorFlash.style.visibility = "visible";
-    }
-
-    if (bigHeader) {
-        bigHeader.style.color = "var(--white)";
-    }
-
-    if (title) {
-        title.style.color = "var(--lightest-slate)";
-    }
-
-    if (aside) {
-        aside.style.background = "#221e39";
-        aside.style.color = "var(--lightest-slate)";
-    }
-
-    if (firstNav) {
-        firstNav.style.color = "var(--lightest-slate)";
-    }
-
-    numberedHeadings.forEach((element) => {
-        element.style.color = "var(--lightest-slate)";
-    });
-
-    body.classList.remove("lightBody");
-    html.classList.remove("lightRoot");
-
-    if (header) {
-        header.classList.remove("lightHeader");
-    }
-
-    if (navMenu) {
-        navMenu.classList.remove("lightNav");
-    }
-
-    setToggleVisualState(true);
-    applyProjectCardColors(true);
-
-    localStorage.setItem("mode", "enabled");
-};
-
-const toggleMode = () => {
-    mode = localStorage.getItem("mode");
-
-    if (mode !== "enabled") {
-        enableDarkMode();
-        return;
-    }
-
-    disableDarkMode();
-};
-
-const updateNavState = (activeId) => {
-    document.querySelectorAll(".nav-link[href^='#']").forEach((link) => {
-        const isActive = link.getAttribute("href") === `#${activeId}`;
-        link.classList.toggle("active-link", isActive);
-        if (isActive) {
-            link.setAttribute("aria-current", "page");
-        } else {
-            link.removeAttribute("aria-current");
-        }
-    });
-};
-
-const initScrollSpy = () => {
-    const sections = sectionIds
-        .map((id) => document.getElementById(id))
-        .filter(Boolean);
-
-    if (!sections.length || typeof IntersectionObserver === "undefined") {
-        return;
-    }
-
-    const observer = new IntersectionObserver(
-        (entries) => {
-            const visibleSections = entries
-                .filter((entry) => entry.isIntersecting)
-                .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
-
-            if (visibleSections.length) {
-                updateNavState(visibleSections[0].target.id);
-            }
-        },
-        {
-            threshold: [0.25, 0.5, 0.75],
-            rootMargin: "-20% 0px -45% 0px",
-        }
-    );
-
-    sections.forEach((section) => observer.observe(section));
-};
-
-const updateActiveSectionByScroll = () => {
-    const sections = sectionIds
-        .map((id) => document.getElementById(id))
-        .filter(Boolean);
-
-    if (!sections.length) {
-        return;
-    }
-
-    const headerOffset = header ? header.offsetHeight : 0;
-    const marker = window.scrollY + headerOffset + 24;
-    const aboutTop = about ? about.offsetTop : Number.POSITIVE_INFINITY;
-
-    if (marker < aboutTop) {
-        updateNavState("");
-        return;
-    }
-
-    let activeId = sections[0].id;
-    sections.forEach((section) => {
-        if (marker >= section.offsetTop) {
-            activeId = section.id;
-        }
-    });
-
-    updateNavState(activeId);
-};
-
-const updateScrollUI = () => {
-    const currentScroll = window.scrollY;
-
-    if (header) {
-        const hasScrolled = currentScroll > 1;
-        header.classList.toggle("is-scrolled", hasScrolled);
-
-        if (hasScrolled) {
-            header.style.boxShadow = "0 8px 24px -18px rgba(0, 0, 0, 0.6)";
-        } else {
-            header.style.boxShadow = "none";
-        }
-
-        if (lastScrollPosition < currentScroll && currentScroll > 80) {
-            header.classList.remove("slideDown");
-            header.classList.add("slideUp");
-        } else if (lastScrollPosition > currentScroll) {
-            header.classList.remove("slideUp");
-            header.classList.add("slideDown");
-        }
-    }
-
-    if (scrollProgress) {
-        const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
-        const progress = totalHeight > 0 ? (currentScroll / totalHeight) * 100 : 0;
-        scrollProgress.style.transform = `scaleX(${Math.min(Math.max(progress, 0), 100) / 100})`;
-    }
-
-    if (backToTop) {
-        backToTop.classList.toggle("show", currentScroll > 600);
-    }
-
-    updateActiveSectionByScroll();
-
-    lastScrollPosition = currentScroll;
-};
-
-const initCursor = () => {
-    const cursor = document.getElementById("cursor");
-
-    if (!cursor) {
-        return;
-    }
-
-    const finePointer = window.matchMedia("(pointer: fine)").matches;
-
-    if (!finePointer || prefersReducedMotion.matches) {
-        cursor.style.display = "none";
-        return;
-    }
-
-    let pointerX = 0;
-    let pointerY = 0;
-    let rafId = null;
-
-    const drawCursor = () => {
-        cursor.style.left = `${pointerX}px`;
-        cursor.style.top = `${pointerY}px`;
-        rafId = null;
-    };
-
-    document.addEventListener(
-        "mousemove",
-        (event) => {
-            pointerX = event.clientX;
-            pointerY = event.clientY;
-
-            if (!rafId) {
-                rafId = requestAnimationFrame(drawCursor);
-            }
-        },
-        { passive: true }
-    );
-};
-
-const initMenu = () => {
-    if (!hamburger || !aside) {
-        return;
-    }
-
-    hamburger.addEventListener("click", () => {
-        if (!mobileQuery.matches) {
-            return;
-        }
-
-        const isOpen = aside.getAttribute("aria-hidden") === "true";
-        setMenuState(isOpen);
-    });
-
-    document.querySelectorAll(".aside a").forEach((link) => {
-        link.addEventListener("click", closeHamburgerMenu);
-    });
-
-    document.addEventListener("click", (event) => {
-        if (!mobileQuery.matches || aside.getAttribute("aria-hidden") === "true") {
-            return;
-        }
-
-        if (aside.contains(event.target) || hamburger.contains(event.target)) {
-            return;
-        }
-
-        closeHamburgerMenu();
-    });
-
-    document.addEventListener("keydown", (event) => {
-        if (event.key === "Escape" && aside.getAttribute("aria-hidden") === "false") {
-            closeHamburgerMenu();
-        }
-    });
-
-    addMediaListener(mobileQuery, (event) => {
-        applyProjectCardColors(localStorage.getItem("mode") === "enabled");
-
-        if (!event.matches) {
-            closeHamburgerMenu();
-        }
-    });
-
-    setMenuState(false);
-};
-
-const initTheme = () => {
-    mode = localStorage.getItem("mode");
-
-    if (mode === "enabled") {
-        enableDarkMode();
-    } else {
-        disableDarkMode();
-    }
-
-    modeToggles.forEach((toggle) => {
-        toggle.addEventListener("click", toggleMode);
-    });
-};
-
-const initBackToTop = () => {
-    if (!backToTop) {
-        return;
-    }
-
-    backToTop.addEventListener("click", () => {
-        window.scrollTo({
-            top: 0,
-            behavior: prefersReducedMotion.matches ? "auto" : "smooth",
-        });
-    });
-};
-
-const initSplash = () => {
-    if (!logoDiv) {
-        return;
-    }
-
-    if (prefersReducedMotion.matches) {
-        logoDiv.style.display = "none";
-        return;
-    }
-
-    const splashDuration = 1400;
-    const removeDuration = 450;
-
-    setTimeout(() => {
-        logoDiv.classList.add("hidden");
-    }, splashDuration);
-
-    setTimeout(() => {
-        logoDiv.style.display = "none";
-    }, splashDuration + removeDuration);
-};
-
-const initYear = () => {
-    if (year) {
-        year.textContent = new Date().getFullYear();
-    }
-};
-
-window.addEventListener(
-    "scroll",
-    () => {
-        updateScrollUI();
-    },
-    { passive: true }
-);
-
-initSplash();
-initCursor();
-initMenu();
-initTheme();
-initBackToTop();
-updateScrollUI();
-initYear();
+  }, { passive: true });
+  updateNavigation();
+})();
