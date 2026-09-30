@@ -88,3 +88,11 @@ Rechecked 2026-09-30. Unavailable links are preserved as historical records, not
 - Checked both themes at 1440, 1024, 768, 600, 390, and 320px: no horizontal overflow or artwork overlap with section content. Inspected full-page captures and individual section gaps, hero, menu, and contact at desktop and mobile sizes. Desktop/mobile Axe scans report zero violations in tested states.
 - Verified page-wide pause/resume, independent offscreen suspension, destination arrival opacity, and reduced-motion suppression. Animation uses CSS dash offsets and opacity, with no JavaScript animation loop.
 - Native email copying and confirmation still work. Specialty label, exact hero tagline, career information, project records, résumé, contact markup, V1 archive, and version routing remain unchanged. Integrity, theme behavior, JavaScript syntax, and whitespace checks pass.
+
+## Living network and navigation previews
+
+- Both themes: hovering an inactive row shows a second right-aligned square while Overview remains active. Pointer exit hides the preview; keyboard focus shows it again without changing `aria-current`.
+- Added recognizable rack servers, port lights, grouped VMs, wireless access, VPN gateways, and miniature browser layouts. Staggered request, branching compute, website response, and return phases share a single clock per diagram; no random particles or JavaScript animation loop.
+- Browser checks cover both themes at 1440, 1024, 768, 600, 390, and 320px. Complete device bounds and section-clearance assertions pass, with no horizontal overflow. Desktop/mobile Axe scans report zero violations in tested states. Visually inspected desktop and mobile topology, section connections, and simultaneous active/hover squares.
+- Verified request/response phase visibility, browser page reveal, global pause/resume for every animated element, and reduced-motion suppression. Existing IntersectionObserver pauses entire diagrams, including port lights and page reveals, when offscreen.
+- Content, career chronology, contact functionality, project data, résumé, and archive remain unchanged. Integrity, theme behavior, JavaScript syntax, and whitespace checks pass.
