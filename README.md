@@ -12,7 +12,7 @@ Visit `http://127.0.0.1:8765/`. The checked-in HTML also contains every project 
 
 ## Navigation and résumé access
 
-The header uses an icon-only hamburger at every width. It opens a native modal side panel with six numbered section links, a small square marking the active section, contact icons, and a direct résumé link. Escape, the X control, and the desktop backdrop dismiss it; focus returns to the opener or moves to the selected section. The background is inert and scroll-locked while the menu is open. A simple navigation fallback remains available without JavaScript.
+The header uses an icon-only hamburger at every width. It opens a native modal side panel with an Overview link and six numbered section links, a small square marking the active section, contact icons, and a direct résumé link. Escape, the X control, and the desktop backdrop dismiss it; focus returns to the opener or moves to the selected section. The background is inert and scroll-locked while the menu is open. A simple navigation fallback remains available without JavaScript.
 
 GitHub and CodePen use inline SVG icons with accessible labels, hover titles, and 44px touch targets. Primary document and project actions retain descriptive text. “View résumé” opens the full PDF in a new tab; the contact section also provides a download. There is no embedded résumé viewer or preview-image dependency.
 
@@ -83,8 +83,16 @@ The header sun/moon button switches directly between Dark and Light. The menu ut
 
 Theme tokens live at the top of `style.css`: backgrounds, surfaces, text, accent/on-accent, borders, selection/focus, image frames/shadows, overlays, and graph colors. The light-token fallback under the system media query intentionally matches the explicit light theme. Components consume tokens; existing project images are unchanged. `scripts/check-theme.mjs` verifies initialization, persistence, system changes, invalid/blocked storage, cross-tab synchronization, and isolation from V1.
 
-The hero uses inline decorative SVG with five primary nodes and sparse connections around the existing seven-layer interaction. Compact screens receive a separate four-node composition; tablet paths stay above the system figure, while mobile paths sit between the introduction and figure. The graph has no data animation or pointer tracking, and is hidden from assistive technology. Ambient depth and the short contact callback use theme tokens. The retired diagonal SVG has been removed; no archived assets were modified.
+The hero uses inline decorative SVG with five primary nodes and sparse connections around the career progression and current-responsibility controls. Compact screens receive a separate four-node composition; tablet paths stay above the system figure, while mobile paths sit between the introduction and figure. The graph has no data animation or pointer tracking, and is hidden from assistive technology. Ambient depth and the short contact callback use theme tokens. The retired diagonal SVG has been removed; no archived assets were modified.
 
 Career chronology starts with web development and expands into current ICT operations. Confirmed dates: Senior ICT Assistant at UP Diliman–CSRC, College of Science, August 2026–present; the previous Project Staff role ended July 31, 2026. The résumé remains the source for responsibilities; the user's confirmed end date supplies day-level precision on the timeline.
 
-The navigation square follows the link with `aria-current="location"`; JavaScript updates it on selection, scrolling, resize, hash changes, and content-height changes. At the hero, no sidebar section is active. Reduced-motion preferences disable the indicator's short opacity/scale transition.
+The navigation square follows the link with `aria-current="location"`; JavaScript updates it on selection, scrolling, resize, hash changes, and content-height changes. At the hero, Overview is active. Reduced-motion preferences disable the indicator's short opacity/scale transition.
+
+## Current professional hierarchy and contact
+
+Senior ICT Assistant is the primary heading and sole current job title in Person metadata. The current focus is Networks, Virtual Machines, Servers, Websites & VPNs. Full-Stack Web Development is labeled as the professional foundation and ongoing skill; all eight original project records remain unchanged. The hero progression starts with that foundation, then highlights current ICT operations and its five responsibility areas. About, the current timeline entry, menu introduction, footer, and sharing artwork follow the same hierarchy. Confirmed appointment dates remain August 2026–present and July 31, 2026 for the previous role's end.
+
+The active navigation indicator is an 8px filled square immediately beside the label, inheriting the active text color. Overview provides an active destination at the top of the page; six content sections retain their existing numbering.
+
+The contact area uses a clickable email link and a native Clipboard API action. Successful copies announce “Email copied.” briefly through a live status region. Denied or unavailable clipboard access selects the address and offers a manual-copy instruction; the email link works without JavaScript.

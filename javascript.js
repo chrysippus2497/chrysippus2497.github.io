@@ -80,19 +80,42 @@
   });
 
   const layers = {
-    network: 'Connectivity is the foundation. Enterprise switching and wireless networks connect people, devices, and services.',
-    security: 'Access connects that foundation to the right people. Firewall and VPN administration support secure remote connectivity.',
-    virtualization: 'Virtualization gives services a place to run. Proxmox brings virtual machines, resources, snapshots, and backups together.',
-    systems: 'Linux servers and containers provide the operating environment. Maintenance and monitoring support the services above them.',
-    services: 'Web servers and databases serve the application. Configuration, certificates, and production support keep those pieces working together.',
-    applications: 'Applications turn infrastructure into useful tools: institutional workflows, business platforms, and everyday services.',
-    experience: 'People complete the picture. Clear interfaces and practical workflows make the underlying technology useful.'
+    operations: 'My current focus: networking, Proxmox virtual machines, Linux server administration, institutional website maintenance, and VPN management.',
+    network: 'I manage enterprise switching and wireless connectivity, troubleshoot network issues, and support reliable access to College of Science services.',
+    security: 'I manage VPN accounts and remote access through pfSense, including account creation and renewal, access configuration, and user support.',
+    virtualization: 'I manage Proxmox virtual machines: provisioning, resource allocation, snapshots, backups, and monitoring.',
+    systems: 'I administer Linux production servers and containerized services, including maintenance, monitoring, backups, and troubleshooting.',
+    services: 'I maintain CSRC and College of Science websites, web services, databases, and certificates, and support production deployments.',
+    applications: 'Full-stack web development is my professional foundation and an ongoing skill. My earlier work includes websites, business platforms, and institutional applications.'
+
   };
   document.querySelectorAll('[data-layer]').forEach(button => {
     button.addEventListener('click', () => {
       document.querySelectorAll('[data-layer]').forEach(layer => layer.setAttribute('aria-pressed', String(layer === button)));
       document.getElementById('stack-detail').textContent = layers[button.dataset.layer];
     });
+  });
+
+  const copyEmail = document.querySelector('.copy-email');
+  const copyStatus = document.querySelector('.copy-status');
+  let confirmationTimer;
+  copyEmail.hidden = false;
+  copyEmail.addEventListener('click', async () => {
+    clearTimeout(confirmationTimer);
+    const email = document.getElementById('contact-email').getAttribute('href').slice(7);
+    try {
+      await navigator.clipboard.writeText(email);
+      copyStatus.textContent = 'Email copied.';
+    } catch {
+      // Leave the address selected for a manual copy when clipboard access is denied.
+      const range = document.createRange();
+      range.selectNodeContents(document.getElementById('contact-email'));
+      const selection = window.getSelection();
+      selection.removeAllRanges();
+      selection.addRange(range);
+      copyStatus.textContent = 'Select and copy the email address.';
+    }
+    confirmationTimer = setTimeout(() => { copyStatus.textContent = ''; }, 3500);
   });
 
   document.querySelector('.work-toolbar').hidden = false;
@@ -144,7 +167,7 @@
 
   // Track section starts so long project lists retain the correct active navigation link.
   const sectionLinks = [...navigation.querySelectorAll('a[href^="#"]')];
-  const sectionCount = String(sectionLinks.length).padStart(2, '0');
+  const sectionCount = String(sectionLinks.length - 1).padStart(2, '0');
   let scheduled = false;
   function markCurrentSection(current) {
     sectionLinks.forEach(link => {
@@ -152,7 +175,7 @@
       else link.removeAttribute('aria-current');
     });
     document.getElementById('nav-location').textContent = current?.dataset.label || 'Portfolio / V2';
-    document.getElementById('nav-position').textContent = current ? `${String(sectionLinks.indexOf(current) + 1).padStart(2, '0')} / ${sectionCount}` : `Index / ${sectionCount}`;
+    document.getElementById('nav-position').textContent = current ? `${String(sectionLinks.indexOf(current)).padStart(2, '0')} / ${sectionCount}` : `Index / ${sectionCount}`;
   }
   function updateNavigation() {
     const atBottom = Math.ceil(window.scrollY + window.innerHeight) >= document.documentElement.scrollHeight - 2;
