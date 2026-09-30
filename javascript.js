@@ -27,18 +27,21 @@
   const menuDialog = document.getElementById('navigation-panel');
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   const motionToggle = document.querySelector('.motion-toggle');
-  const hero = document.querySelector('.hero');
+  const root = document.documentElement;
   const updateMotionControl = () => { motionToggle.hidden = reducedMotion.matches; };
   updateMotionControl();
   reducedMotion.addEventListener('change', updateMotionControl);
   motionToggle.addEventListener('click', () => {
-    const paused = hero.classList.toggle('data-flow-paused');
+    const paused = root.classList.toggle('data-flow-paused');
     motionToggle.setAttribute('aria-pressed', String(paused));
     motionToggle.textContent = paused ? 'Resume data flow' : 'Pause data flow';
   });
-  // Animate only when the artwork is on screen.
+  // Suspend each complete SVG independently; scrolling never redraws the network.
   if ('IntersectionObserver' in window) {
-    new IntersectionObserver(([entry]) => hero.classList.toggle('artwork-offscreen', !entry.isIntersecting)).observe(hero);
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => entry.target.classList.toggle('artwork-offscreen', !entry.isIntersecting));
+    });
+    document.querySelectorAll('.network-art').forEach(art => observer.observe(art));
   }
   let menuDestination = null;
   menu.hidden = false;

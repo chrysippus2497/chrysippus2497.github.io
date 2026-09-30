@@ -80,3 +80,11 @@ Rechecked 2026-09-30. Unavailable links are preserved as historical records, not
 - Both themes inspected at 1440, 1024, 768, 390, and 320px; no horizontal overflow. Desktop/mobile Axe scans found no violations in tested states.
 - Verified signal dash-offset movement, pause/resume, and automatic offscreen pause. Reduced motion disables signals and hides the motion control. No-JavaScript markup remains static.
 - The active square and native email copy confirmation still work. Contact markup, all project records, résumé, V1, and version routing are preserved. Local integrity, theme checks, JavaScript syntax, and whitespace checks pass.
+
+## Full-page network refinement — October 1, 2026
+
+- Moved the active square to the far-right edge of the navigation row. Browser geometry checks verify right alignment and vertical centering in both themes on desktop and mobile; the existing scroll and selection logic remains intact.
+- Replaced the hero overlay with a complete topology in reserved space and added five quieter connecting diagrams between sections. A continuous margin line links these diagrams visually. Switch, server, VM, browser, and VPN icons stay inside their SVG bounds.
+- Checked both themes at 1440, 1024, 768, 600, 390, and 320px: no horizontal overflow or artwork overlap with section content. Inspected full-page captures and individual section gaps, hero, menu, and contact at desktop and mobile sizes. Desktop/mobile Axe scans report zero violations in tested states.
+- Verified page-wide pause/resume, independent offscreen suspension, destination arrival opacity, and reduced-motion suppression. Animation uses CSS dash offsets and opacity, with no JavaScript animation loop.
+- Native email copying and confirmation still work. Specialty label, exact hero tagline, career information, project records, résumé, contact markup, V1 archive, and version routing remain unchanged. Integrity, theme behavior, JavaScript syntax, and whitespace checks pass.

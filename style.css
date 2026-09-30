@@ -2095,3 +2095,52 @@ a.social-link:hover { color: var(--accent); background: var(--surface-raised); b
   .data-signal,.motion-toggle { display:none!important; }
 }
 @media print { .motion-toggle { display:none; } }
+
+/* Continuous network: complete diagrams occupy their own whitespace, never cards. */
+.menu-links a { grid-template-columns:25px minmax(0,1fr) 8px; }
+.menu-links a>span:nth-child(2) { grid-column:2; }
+.menu-active-indicator { grid-column:3; justify-self:end; }
+#main-content { position:relative; isolation:isolate; }
+#main-content::after { content:""; position:absolute; top:120px; bottom:0; right:calc((100% - min(100% - var(--gutter)*2, var(--content)))/2 - 12px); width:1px; background:var(--connection); opacity:.38; pointer-events:none; z-index:1; }
+.connected-system { position:relative; top:auto; right:auto; bottom:auto; width:100%; height:auto; margin:36px 0 0; grid-column:1/-1; order:3; z-index:1; }
+.hero-bottom { order:4; }
+.connected-system .system-desktop { display:block; }
+.connected-system .system-mobile { display:none; }
+.connected-system svg { display:block; width:100%; height:auto; overflow:visible; }
+.connected-system::before { inset:0; }
+.network-stage { position:relative; height:auto; margin-block:0; padding:0; z-index:1; pointer-events:none; }
+.network-stage svg { display:block; width:100%; height:auto; overflow:visible; }
+.network-stage .system-mobile { display:none; }
+.network-stage::after,.connected-system::after { content:""; position:absolute; right:-12px; width:12px; top:53.333%; height:1px; background:var(--connection); opacity:.65; }
+.connected-system::after { top:41.38%; }
+.network-art .system-paths { opacity:.65; stroke-width:1.2; }
+.connected-system .system-paths { opacity:.8; stroke-width:1.35; }
+.network-art .topology-device { stroke-width:1.2; }
+.network-stage .topology-device { stroke:var(--connection); }
+.destination-pulse { fill:none; stroke:var(--accent); stroke-width:1.2; opacity:0; }
+@media(prefers-reduced-motion:no-preference) {
+  .js .network-stage .data-signal { animation-duration:20s; }
+  .js .destination-pulse.arrival-0 { animation:destination-arrival 14s linear infinite; }
+  .js .destination-pulse.arrival-1 { animation:destination-arrival 14s 7s linear infinite; }
+  .js .network-stage .destination-pulse { animation-duration:20s; }
+  .data-flow-paused .data-signal,.data-flow-paused .destination-pulse,.artwork-offscreen .data-signal,.artwork-offscreen .destination-pulse { animation-play-state:paused!important; }
+}
+@keyframes destination-arrival {
+  0%,32%,41%,100% { opacity:0; }
+  35% { opacity:.45; }
+  38% { opacity:.15; }
+}
+@media(max-width:760px) {
+  .connected-system { margin-top:26px; order:3; }
+  .connected-system .system-desktop,.network-stage .system-desktop { display:none; }
+  .connected-system .system-mobile,.network-stage .system-mobile { display:block; }
+  .connected-system::after { top:53.7%; }
+  .network-stage::after { top:65.33%; }
+  .network-art .topology-device text { font-size:9px; }
+  .js .network-art .data-signal,.js .network-art .destination-pulse { animation-duration:22s; }
+  .js .network-art .signal-1,.js .network-art .arrival-1 { animation-delay:11s; }
+}
+@media(prefers-reduced-motion:reduce) {
+  .destination-pulse { display:none; }
+}
+@media print { .network-stage,#main-content::after { display:none; } }
