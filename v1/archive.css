@@ -1,0 +1,6 @@
+/* Archive-only compatibility and basic accessibility. Original design lives in style.css. */
+.archive-notice { position: fixed; bottom: 16px; left: 50%; transform: translateX(-50%); z-index: 10001; display: flex; align-items: center; gap: 18px; max-width: calc(100% - 28px); padding: 4px 14px; background: #211e35; border: 1px solid #726b8c; color: #eeeaf5; font: 10px/1.5 monospace; white-space: nowrap; box-shadow: 0 4px 24px #0003; }
+.archive-notice a { color: #ffab98; min-height: 44px; display: inline-flex; align-items: center; }
+.archive-notice a:focus-visible { outline: 2px solid #ffab98; outline-offset: 3px; }
+@media (max-width: 380px) { .archive-notice { gap: 12px; padding-inline: 10px; font-size: 9px; } }
+@media (prefers-reduced-motion: reduce) { [data-aos] { opacity: 1 !important; transform: none !important; } }

@@ -44,10 +44,30 @@ The supplied résumé is authoritative for career details. The repository is aut
 
 Publish the repository root through the existing GitHub Pages configuration. All local asset references are relative. The `.nojekyll` file requests static serving. No package installation or build service is required. Regenerate and commit `index.html` whenever `projects.json` changes.
 
-The canonical and sharing URLs assume `https://chrysippus2497.github.io/`; update those if the public domain changes. No deployment or push was performed during this redesign.
+The canonical and sharing URLs assume `https://chrysippus2497.github.io/`; update those if the public domain changes. The repository root is the GitHub Pages publishing source.
 
 ## Historical links and assets
 
 Original project URLs have been retained and labeled as original websites or repository links, rather than promising live demos or publicly accessible source. Two institutional GitHub URLs point to the profile and are labeled accordingly. Several historical URLs are unavailable; see `QA.md` before replacing them. The original malformed LinkedIn URL returned 404 and is not shown in the redesigned site. No substitute account was invented.
 
 Original portraits, favicon/logo variations, and project screenshots are preserved as branding and historical source assets. Runtime AOS, external font requests, obsolete theme/cursor/splash code, generated legacy selectors, and duplicate inline project-rendering code have been removed. All four bundled font files are used. Existing ignored `node_modules` is not a site dependency; QA tools were installed separately under the temporary directory.
+
+## Major portfolio versions
+
+| Route | Purpose | Indexing |
+| --- | --- | --- |
+| `/` | Current portfolio, V2 | Canonical |
+| `/v1/` | Original portfolio from commit `4f01ff2` | noindex, follow; canonical root |
+| `/v2/` | Redirect to current V2, preserving query and fragment with JavaScript | noindex, follow; canonical root |
+
+V1 is self-contained: original CSS, images, screenshots, fonts, and its historical two-page résumé live inside `v1/`. These are **intentional archive dependencies**, even when similar files exist at root. `v1/archive-manifest.json` records the source commit and checksums for 19 unchanged historical files. The integrity script protects them against accidental cleanup or mutation.
+
+Archive-only changes: relative local dependencies, scalable viewport, archive notice, canonical/noindex metadata, labeled project links, isolated theme storage, keyboard focus handling, reduced-motion support, and locally vendored AOS 3.0.0-beta.6 with its MIT license. V1 retains its historical copy, layout, project rendering, theme switch, and links. Root V2 has no runtime library dependencies.
+
+For V3: first replace the `/v2/` redirect with a self-contained frozen V2 snapshot, preserving its dependencies and adding an archive notice/noindex/canonical metadata. Then update root to V3 and add `/v3/` as its alias. Never redirect an archived version to a newer design. Include every version in asset checks before removing resources.
+
+## Case-study content
+
+`caseStudy` is optional project data: `context`, `purpose`, `contribution`, and an array of `implementation` titles/descriptions. The two institutional cases use the original project records for purpose, screenshots, and technologies, and the supplied résumé for development, maintenance, authentication, and administration responsibilities. Operational descriptions refer to work across the College's platforms; they do not claim every project uses every infrastructure tool. No performance metrics, project dates, or claims of sole authorship were added.
+
+The generator renders featured case studies separately from selected projects while preserving the eight original records and complete project-specific technology lists. Filters hide empty groups; native disclosures provide details without JavaScript. Header/menu navigation remains unchanged in structure. Résumé access is a direct PDF link, with no embedded viewer.

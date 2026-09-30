@@ -27,7 +27,26 @@
     "width": 2846,
     "height": 1452,
     "imageWebp": "project-assets/optimized/cs-resources.webp",
-    "imageSmall": "project-assets/optimized/cs-resources-640.webp"
+    "imageSmall": "project-assets/optimized/cs-resources-640.webp",
+    "caseStudy": {
+      "context": "University of the Philippines Diliman · College of Science",
+      "purpose": "Give faculty a central place to access, monitor, and share laboratory equipment across institutes.",
+      "contribution": "Supported development, interface improvements, and ongoing maintenance of the database. Later responsibilities included system administration and technical support for its users.",
+      "implementation": [
+        {
+          "title": "Resource workflows",
+          "description": "Equipment management and sharing organized around College of Science laboratories and institutes."
+        },
+        {
+          "title": "Application stack",
+          "description": "Laravel, Livewire, and Filament, with Tailwind and Alpine for the interface — the technologies recorded for this project."
+        },
+        {
+          "title": "Ongoing operations",
+          "description": "Server checks, backups, database maintenance, and user support as part of administering the College’s institutional platforms."
+        }
+      ]
+    }
   },
   {
     "title": "CS Centralized Portal",
@@ -61,7 +80,26 @@
     "width": 2852,
     "height": 1452,
     "imageWebp": "project-assets/optimized/cs-portal.webp",
-    "imageSmall": "project-assets/optimized/cs-portal-640.webp"
+    "imageSmall": "project-assets/optimized/cs-portal-640.webp",
+    "caseStudy": {
+      "context": "University of the Philippines Diliman · College of Science",
+      "purpose": "Bring academic and administrative document processing into one portal for faculty, staff, and students.",
+      "contribution": "Contributed to the portal’s development, maintenance, and administration, including authentication integration and support for institutional document workflows.",
+      "implementation": [
+        {
+          "title": "Document processing",
+          "description": "A PHP-based workflow with the recorded PDF tools: TCPDF, QPDF, FPDI, and Ghostscript."
+        },
+        {
+          "title": "Connected authentication",
+          "description": "Integrated OAuth 2.0-based authentication into the institutional portal to support sign-on across connected systems."
+        },
+        {
+          "title": "Maintenance & support",
+          "description": "Maintained the portal and its supporting services, with server monitoring, backups, database maintenance, and support for faculty, staff, and students."
+        }
+      ]
+    }
   },
   {
     "title": "Aimporo Business Technologies, Inc.",

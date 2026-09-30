@@ -1,0 +1,25 @@
+{
+  "sourceCommit": "4f01ff2c9bcdc5905f02faa9d3f6d1db73ab184c",
+  "description": "Original pre-redesign portfolio. These source assets and stylesheet must remain byte-identical; HTML and JS receive documented compatibility fixes.",
+  "sha256": {
+    "assets/Calibre-Medium-568dce56f869a519a015d3b69443b067.woff2": "1ffde00378829f7738a204aeb7e3f61a0856cf0b4e99b581a3544d469ba127a6",
+    "assets/Calibre-Regular-b0d4cbb1201155ddccc21d1b8059a670.woff2": "4cc3b83d376f3a160e48d425c4b791a9655415e8255b67711af594de11371f30",
+    "assets/Calibre-Semibold-94fc73852539d6733dc0d80252c5e3fb.woff2": "a6c6bc5d2be1a83962aa6bbfcbae6f225cbd1c6704d2580322774b0e0517caf2",
+    "assets/SFMono-Regular-8799e6387338d58f2f137df821c86eb4.woff2": "d7d0de63b63193791e0d10ffdc3f76db3874745391f629957f3e9de0f06192b4",
+    "images/about_me_hero.jpg": "a854ebd2915410512cbdfb91d52a37a57b440c310f5be3ec0062a115005d72db",
+    "images/favicon.png": "2882bb77f1beab4743f1b9eb96d562c9de408aa5fb3528b74cead13bd651be89",
+    "images/favicon1.png": "508e2fb340166dd107cf7d4bafe79bae8eb47d8a74287bb398850dcf6808b02b",
+    "images/faviconCircle.png": "ff7543ffa5ba0d538bb29fdf039fbc82aa502b462d7ad30ab46582eb7e42e179",
+    "images/logo.png": "be26a4cea77beabc895426b43e94254b68e6f23f7733aff6b69d1ac98b52e9df",
+    "project-assets/aimporo.jpg": "c30984b8e70057ef9b20bff06dd05560f736a627ba4efc18ed7f43dcc13d9e83",
+    "project-assets/aquapura_hero.png": "f60d6e6fc445347689101de700bdedcdfad9a20cd6acfce32dd631c912d6331c",
+    "project-assets/cs-centralized-portal.png": "354cc172f69bc38735319065db12a106aa1e281201c5a8d5e2bffbec3b8a8921",
+    "project-assets/cs-resources-equipment-database.png": "32fc7f45e56ce06f11b02453580b546c4d1a123ddc5f408c6baf23eecfb671f2",
+    "project-assets/hnhs_hero.png": "2f712638835a088596ac44129eaf384e398fc424cda6404c6422e888db43df81",
+    "project-assets/propertyrequirementsph_hero.png": "a02af1d36d33124ec1b624d9077fe6b79a8902a3b1b7a5425dd0134638a29d6b",
+    "project-assets/pwise_hero.png": "a8954d5fd8f47257a105f879a91ae322aee8b3ea771f85ccf66480af338b702b",
+    "project-assets/tsibugan_hero.png": "d1f218448060a93b1d739b8bbed1351dc71e3d50ccc74f8c295f0dce7c58046e",
+    "resume/resume.pdf": "57921b73750c012dec82cc008b0ac4e24ac3f848ef97ee99b1d67c5419f459a9",
+    "style.css": "abb47dd47006ad4a6a9991cf2561d12d9455c8b52804d932789d7d2b999fd667"
+  }
+}

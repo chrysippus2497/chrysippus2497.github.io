@@ -86,6 +86,11 @@
         project.hidden = button.dataset.filter !== 'all' && project.dataset.category !== button.dataset.filter;
         if (!project.hidden) count++;
       });
+      document.querySelectorAll('.work-group').forEach(group => {
+        const visible = group.querySelectorAll('.project:not([hidden])').length;
+        group.hidden = visible === 0;
+        group.querySelector('.work-group-count').textContent = `${visible} project${visible === 1 ? '' : 's'}`;
+      });
       document.getElementById('project-count').textContent = `${count} project${count === 1 ? '' : 's'}`;
     });
   });
@@ -129,7 +134,7 @@
       if (link === current) link.setAttribute('aria-current', 'location');
       else link.removeAttribute('aria-current');
     });
-    document.getElementById('nav-location').textContent = current?.dataset.label || 'Portfolio';
+    document.getElementById('nav-location').textContent = current?.dataset.label || 'Portfolio / V2';
     document.getElementById('nav-position').textContent = current ? `${String(sectionLinks.indexOf(current) + 1).padStart(2, '0')} / ${sectionCount}` : `Index / ${sectionCount}`;
     scheduled = false;
   }
