@@ -11,7 +11,7 @@ Checked locally in Chrome on 2026-09-30 using a static HTTP server. Automated ch
 - Axe scans report zero violations for tested root desktop/mobile and open-menu states.
 - Reduced motion disables smooth scrolling. All project content, details, and fallback navigation remain usable without JavaScript.
 - No JavaScript errors or failed resource requests in the responsive/version checks. PDFs are local and valid; email uses mailto with envelope icons. No inline résumé preview.
-- Root canonical, social metadata, refreshed 1200×630 sharing image, Person schema, and eight CreativeWork entries reflect V2. The hero uses static inline Connected Systems SVG; no decorative animation or new runtime dependency.
+- Root canonical, social metadata, refreshed 1200×630 sharing image, Person schema, and eight CreativeWork entries reflect V2. The hero uses inline SVG with optional CSS data-flow pulses; no new runtime dependency.
 
 ## Version routes and asset protection
 
@@ -53,7 +53,7 @@ Rechecked 2026-09-30. Unavailable links are preserved as historical records, not
 - Browser tests passed for first-visit light/dark preferences, both manual choices across reload, manual overrides surviving OS changes, returning to System, and live OS preference changes. A delayed-stylesheet test confirmed the saved light preference is applied before styles finish loading, despite a dark OS preference.
 - Storage-blocked browsers can still switch themes. No-JavaScript pages follow OS colors through CSS and retain all eight projects. Dependency-free theme tests additionally cover invalid values, cross-tab updates, storage clearing, and V1 storage isolation.
 - The header switch and three menu options have accessible names/pressed states and 44px targets. Keyboard checks cover appearance-button activation, focus retention while changing theme, forward/reverse menu containment, Escape, focus restoration, and all six section links in both themes.
-- Every screenshot preview and the résumé endpoint were checked. No console errors or warnings were reported. Reduced motion disables existing transitions and smooth scrolling; the graph is static in every mode.
+- Every screenshot preview and the résumé endpoint were checked. No console errors or warnings were reported. Reduced motion disables existing transitions and smooth scrolling; the later topology revision adds optional motion, described below.
 - `/v2/` preserves query/hash and V2 preferences when redirecting. `/v1/` retains its original markup, styles, assets, and separate theme behavior; it does not receive V2's theme attribute. The archive checksum checks pass.
 - Removed the V2-only diagonal-background SVG and its CSS; sharing artwork now uses the Connected Systems motif. Project data, résumé content, and archive files were not changed.
 
@@ -72,3 +72,11 @@ Rechecked 2026-09-30. Unavailable links are preserved as historical records, not
 - Dark and light layouts tested at 1440, 768, 390, and 320px: no horizontal overflow. Desktop/mobile Axe scans report zero violations in the tested page states. Role hierarchy, confirmed dates, initial ICT selection, indicator color, and contact layout checked in-browser.
 - Native clipboard write succeeds with an actual browser click. Confirmation clears after 3.5 seconds. A denied-write test verifies manual selection and an accurate fallback message. The mailto link remains available independently of the button.
 - Theme behavior checks, generated project/asset integrity, archive checksums, JavaScript syntax, and git whitespace checks pass. V1 and the résumé were not modified.
+
+## Specialty label and animated topology refinement
+
+- Hero, menu, footer, title, and sharing artwork now use Network, Systems & Software. The exact hero tagline is “Building software. Connecting systems. Keeping services running.” Actual job title and confirmed dates remain in About/Experience and structured data.
+- Decorative switch, server, VM, browser, and VPN motifs use thin theme-aware strokes. Branches connect switch → server/VM → websites; dashed paths distinguish VPN access. Mobile/tablet use a simpler independent composition, with no actual infrastructure identifiers or configuration.
+- Both themes inspected at 1440, 1024, 768, 390, and 320px; no horizontal overflow. Desktop/mobile Axe scans found no violations in tested states.
+- Verified signal dash-offset movement, pause/resume, and automatic offscreen pause. Reduced motion disables signals and hides the motion control. No-JavaScript markup remains static.
+- The active square and native email copy confirmation still work. Contact markup, all project records, résumé, V1, and version routing are preserved. Local integrity, theme checks, JavaScript syntax, and whitespace checks pass.

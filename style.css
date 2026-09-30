@@ -1976,17 +1976,12 @@ a.social-link:hover { color: var(--accent); background: var(--surface-raised); b
 .theme-options button:hover { color:var(--ink); background:var(--surface-raised); }
 .theme-options button[aria-pressed="true"] { color:var(--accent); border-color:var(--active-border); background:var(--active-surface); }
 
-/* Connected Systems: five primary nodes, a few branches, and a quiet ambient layer.
+/* Connected Systems: sparse infrastructure branches and a quiet ambient layer.
    Decorative only; the seven existing controls remain the accessible explanation. */
 .connected-system { position:absolute; z-index:-1; top:18px; right:-3%; width:67%; height:850px; pointer-events:none; }
 .connected-system::before { content:""; position:absolute; inset:8% 0 8% 20%; mask-image:radial-gradient(ellipse at center,#000 10%,transparent 72%); background:radial-gradient(ellipse at 56% 30%,var(--ambient),transparent 65%),radial-gradient(ellipse at 85% 78%,var(--ambient),transparent 50%); }
 .connected-system svg { position:relative; width:100%; height:100%; overflow:visible; }
 .system-paths { stroke:var(--connection); stroke-width:1; opacity:var(--connection-opacity); }
-.system-nodes { fill:var(--bg); stroke:var(--node); stroke-width:1.25; }
-.system-endpoints { fill:var(--node); opacity:.6; }
-.system-junctions { fill:var(--node); opacity:.55; }
-.system-nodes .system-node-active { fill:var(--node-active); stroke:var(--node-active); }
-.system-annotations { fill:var(--graph-label); font:9px var(--mono); letter-spacing:.09em; }
 .connected-system .system-mobile { display:none; }
 .contact-section { position:relative; }
 .contact-section::before { content:""; position:absolute; top:0; right:var(--gutter); width:90px; height:24px; border-right:1px solid var(--connection); border-bottom:1px solid var(--connection); border-radius:0 0 10px; opacity:var(--connection-opacity); }
@@ -1995,7 +1990,6 @@ a.social-link:hover { color: var(--accent); background: var(--surface-raised); b
   .connected-system { top:-6px; right:0; width:44%; height:110px; }
   .connected-system .system-desktop { display:none; }
   .connected-system .system-mobile { display:block; }
-  .connected-system .system-annotations { display:none; }
 }
 @media (max-width:760px) {
   .nav-utilities { gap:6px; }
@@ -2023,7 +2017,7 @@ a.social-link:hover { color: var(--accent); background: var(--surface-raised); b
   .nav-utilities,.theme-settings,.connected-system,.contact-section::before,.contact-section::after { display:none!important; }
 }
 
-/* Current appointment leads; development remains an explicitly labeled foundation. */
+/* Specialty heading, with the current appointment and development foundation retained. */
 .hero-name { font-size:30px; font-weight:500; color:var(--ink); margin-top:26px; }
 .hero h1 { font-size:clamp(58px,5.7vw,82px); margin:12px 0 22px; }
 .hero-statement { font-size:clamp(25px,2.2vw,32px); line-height:1.18; letter-spacing:-.015em; }
@@ -2067,3 +2061,37 @@ a.social-link:hover { color: var(--accent); background: var(--surface-raised); b
 }
 
 .hero-foundation + .actions { margin-top:24px; }
+
+/* Small schematic motifs connect infrastructure to its web services. */
+.hero h1 { font-size:clamp(46px,4.8vw,69px); }
+.topology-device { stroke:var(--node); stroke-width:1; fill:var(--bg); }
+.topology-device text { stroke:none; fill:var(--graph-label); font:8px var(--mono); letter-spacing:.07em; }
+.topology-device path { stroke-linecap:round; stroke-linejoin:round; }
+.vpn-connection { stroke-dasharray:3 6; }
+.data-signal { stroke:var(--node-active); stroke-width:2; stroke-linecap:round; stroke-dasharray:2 98; opacity:0; }
+.motion-toggle { margin-top:12px; padding:8px 0; min-height:44px; background:none; border:0; font:10px var(--mono); color:var(--muted); text-decoration:underline; text-underline-offset:4px; }
+.motion-toggle:hover { color:var(--accent); }
+@media(prefers-reduced-motion:no-preference) {
+  .js .data-signal { animation:network-flow 14s linear infinite; filter:drop-shadow(0 0 2px var(--ambient)); }
+  .js .signal-1 { animation-delay:7s; }
+  .data-flow-paused .data-signal,.artwork-offscreen .data-signal { animation-play-state:paused; }
+}
+@keyframes network-flow {
+  0%,5% { stroke-dashoffset:100; opacity:0; }
+  8% { opacity:.65; }
+  32% { opacity:.65; }
+  35%,100% { stroke-dashoffset:0; opacity:0; }
+}
+@media(max-width:1100px) and (min-width:761px) {
+  .topology-device text { display:none; }
+}
+@media(max-width:760px) {
+  .hero h1 { font-size:clamp(42px,8.8vw,64px); }
+  .connected-system { height:180px; margin:8px 0 -20px; }
+  .js .data-signal { animation-duration:18s; }
+  .js .signal-1 { animation-delay:9s; }
+}
+@media(prefers-reduced-motion:reduce) {
+  .data-signal,.motion-toggle { display:none!important; }
+}
+@media print { .motion-toggle { display:none; } }

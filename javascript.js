@@ -26,6 +26,20 @@
   const navigation = document.getElementById('nav-links');
   const menuDialog = document.getElementById('navigation-panel');
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const motionToggle = document.querySelector('.motion-toggle');
+  const hero = document.querySelector('.hero');
+  const updateMotionControl = () => { motionToggle.hidden = reducedMotion.matches; };
+  updateMotionControl();
+  reducedMotion.addEventListener('change', updateMotionControl);
+  motionToggle.addEventListener('click', () => {
+    const paused = hero.classList.toggle('data-flow-paused');
+    motionToggle.setAttribute('aria-pressed', String(paused));
+    motionToggle.textContent = paused ? 'Resume data flow' : 'Pause data flow';
+  });
+  // Animate only when the artwork is on screen.
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(([entry]) => hero.classList.toggle('artwork-offscreen', !entry.isIntersecting)).observe(hero);
+  }
   let menuDestination = null;
   menu.hidden = false;
   menu.addEventListener('click', () => {
