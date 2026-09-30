@@ -4,6 +4,24 @@
   document.documentElement.classList.add('js');
   document.getElementById('year').textContent = new Date().getFullYear();
 
+  const themeToggle = document.querySelector('.theme-toggle');
+  const themeChoices = [...document.querySelectorAll('[data-theme-choice]')];
+  if (window.portfolioTheme) {
+    function updateThemeControls() {
+      const next = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+      const label = `Switch to ${next} theme`;
+      themeToggle.setAttribute('aria-label', label);
+      themeToggle.title = label;
+      themeChoices.forEach(button => button.setAttribute('aria-pressed', String(button.dataset.themeChoice === document.documentElement.dataset.themePreference)));
+    }
+    themeToggle.hidden = false;
+    document.querySelector('.theme-settings').hidden = false;
+    themeToggle.addEventListener('click', () => window.portfolioTheme.set(document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark'));
+    themeChoices.forEach(button => button.addEventListener('click', () => window.portfolioTheme.set(button.dataset.themeChoice)));
+    window.addEventListener('portfolio-theme-change', updateThemeControls);
+    updateThemeControls();
+  }
+
   const menu = document.querySelector('.menu-toggle');
   const navigation = document.getElementById('nav-links');
   const menuDialog = document.getElementById('navigation-panel');
@@ -56,6 +74,7 @@
     if (link.getAttribute('href').startsWith('#')) {
       event.preventDefault();
       menuDestination = link.getAttribute('href');
+      markCurrentSection(link);
     }
     menuDialog.close();
   });
@@ -127,15 +146,18 @@
   const sectionLinks = [...navigation.querySelectorAll('a[href^="#"]')];
   const sectionCount = String(sectionLinks.length).padStart(2, '0');
   let scheduled = false;
-  function updateNavigation() {
-    const atBottom = Math.ceil(window.scrollY + window.innerHeight) >= document.documentElement.scrollHeight - 2;
-    const current = atBottom ? sectionLinks.at(-1) : sectionLinks.filter(link => document.querySelector(link.hash).getBoundingClientRect().top <= 140).at(-1);
+  function markCurrentSection(current) {
     sectionLinks.forEach(link => {
       if (link === current) link.setAttribute('aria-current', 'location');
       else link.removeAttribute('aria-current');
     });
     document.getElementById('nav-location').textContent = current?.dataset.label || 'Portfolio / V2';
     document.getElementById('nav-position').textContent = current ? `${String(sectionLinks.indexOf(current) + 1).padStart(2, '0')} / ${sectionCount}` : `Index / ${sectionCount}`;
+  }
+  function updateNavigation() {
+    const atBottom = Math.ceil(window.scrollY + window.innerHeight) >= document.documentElement.scrollHeight - 2;
+    const current = atBottom ? sectionLinks.at(-1) : sectionLinks.filter(link => document.querySelector(link.hash).getBoundingClientRect().top <= 140).at(-1);
+    markCurrentSection(current);
     scheduled = false;
   }
   window.addEventListener('scroll', () => {
@@ -144,5 +166,9 @@
       requestAnimationFrame(updateNavigation);
     }
   }, { passive: true });
+  window.addEventListener('resize', updateNavigation);
+  window.addEventListener('hashchange', updateNavigation);
+  // Expanded case studies and filters can move section boundaries without scrolling.
+  if ('ResizeObserver' in window) new ResizeObserver(updateNavigation).observe(document.getElementById('main-content'));
   updateNavigation();
 })();

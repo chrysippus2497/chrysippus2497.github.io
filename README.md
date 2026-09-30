@@ -1,6 +1,6 @@
 # Rafael Aquino — Portfolio
 
-A dark-first, static portfolio grounded in web development, reflecting an expanded role in networks and systems administration. The site runs directly on GitHub Pages, with no framework, backend, runtime dependencies, or deployment build step.
+A static portfolio with dark and warm-paper light themes, grounded in web development, reflecting an expanded role in networks and systems administration. The site runs directly on GitHub Pages, with no framework, backend, runtime dependencies, or deployment build step.
 
 ## Preview
 
@@ -12,7 +12,7 @@ Visit `http://127.0.0.1:8765/`. The checked-in HTML also contains every project 
 
 ## Navigation and résumé access
 
-The header uses an icon-only hamburger at every width. It opens a native modal side panel with six numbered section links, a current-section indicator, contact icons, and a direct résumé link. Escape, the X control, and the desktop backdrop dismiss it; focus returns to the opener or moves to the selected section. The background is inert and scroll-locked while the menu is open. A simple navigation fallback remains available without JavaScript.
+The header uses an icon-only hamburger at every width. It opens a native modal side panel with six numbered section links, a small square marking the active section, contact icons, and a direct résumé link. Escape, the X control, and the desktop backdrop dismiss it; focus returns to the opener or moves to the selected section. The background is inert and scroll-locked while the menu is open. A simple navigation fallback remains available without JavaScript.
 
 GitHub and CodePen use inline SVG icons with accessible labels, hover titles, and 44px touch targets. Primary document and project actions retain descriptive text. “View résumé” opens the full PDF in a new tab; the contact section also provides a download. There is no embedded résumé viewer or preview-image dependency.
 
@@ -22,6 +22,7 @@ GitHub and CodePen use inline SVG icons with accessible labels, hover titles, an
 - `projects.json`: authoritative project records. Original descriptions, technology lists, screenshots, and URLs are retained. New presentation fields contain supported categories, summaries, and contributions.
 - `scripts/build-projects.mjs`: renders project records and project structured data into the marked region in `index.html`. Do not edit that region by hand.
 - `style.css`: local fonts, design tokens, layout, breakpoints, interactions, reduced-motion, and print styles.
+- `theme-init.js`: small pre-stylesheet initializer for system preference, saved themes, browser theme color, and cross-tab synchronization.
 - `javascript.js`: progressive enhancement for the all-width modal navigation, filters, stack explanation, and screenshot previews.
 - `project-assets/`: original screenshots. `optimized/` contains 640px and up-to-1280px WebP derivatives; original images remain available in the screenshot viewer.
 - `resume/resume.pdf`: public copy of the supplied latest résumé. The internal VPN service label was removed to respect the brief's confidentiality requirement; all three pages and professional content remain. The source PDF outside this repository was not modified.
@@ -34,6 +35,8 @@ node scripts/build-projects.mjs
 node scripts/build-projects.mjs --check
 node scripts/check-integrity.mjs
 node --check javascript.js
+node --check theme-init.js
+node scripts/check-theme.mjs
 ```
 
 Adding a project requires an original image, responsive derivatives, accurate dimensions, a stable `id`, and supported factual fields. Keep descriptions as text; `<br>` is the only supported markup. Project metadata is HTML-escaped during rendering.
@@ -71,3 +74,17 @@ For V3: first replace the `/v2/` redirect with a self-contained frozen V2 snapsh
 `caseStudy` is optional project data: `context`, `purpose`, `contribution`, and an array of `implementation` titles/descriptions. The two institutional cases use the original project records for purpose, screenshots, and technologies, and the supplied résumé for development, maintenance, authentication, and administration responsibilities. Operational descriptions refer to work across the College's platforms; they do not claim every project uses every infrastructure tool. No performance metrics, project dates, or claims of sole authorship were added.
 
 The generator renders featured case studies separately from selected projects while preserving the eight original records and complete project-specific technology lists. Filters hide empty groups; native disclosures provide details without JavaScript. Header/menu navigation remains unchanged in structure. Résumé access is a direct PDF link, with no embedded viewer.
+
+## V2 appearance and Connected Systems
+
+The header sun/moon button switches directly between Dark and Light. The menu utility area offers Dark, Light, and System; System removes the manual override and follows live OS preference changes. First visits follow `prefers-color-scheme`; dark remains the fallback when no light preference is reported. V1 retains its independent historical theme.
+
+`theme-init.js` runs before the stylesheet to apply `data-theme` before paint. Manual preferences use `portfolio-v2-theme` in localStorage. Storage failures fall back to a working in-memory choice; other open V2 tabs synchronize through the storage event. CSS supplies system-aware colors even without JavaScript. There are no cookies or server-side preferences.
+
+Theme tokens live at the top of `style.css`: backgrounds, surfaces, text, accent/on-accent, borders, selection/focus, image frames/shadows, overlays, and graph colors. The light-token fallback under the system media query intentionally matches the explicit light theme. Components consume tokens; existing project images are unchanged. `scripts/check-theme.mjs` verifies initialization, persistence, system changes, invalid/blocked storage, cross-tab synchronization, and isolation from V1.
+
+The hero uses inline decorative SVG with five primary nodes and sparse connections around the existing seven-layer interaction. Compact screens receive a separate four-node composition; tablet paths stay above the system figure, while mobile paths sit between the introduction and figure. The graph has no data animation or pointer tracking, and is hidden from assistive technology. Ambient depth and the short contact callback use theme tokens. The retired diagonal SVG has been removed; no archived assets were modified.
+
+Career chronology starts with web development and expands into current ICT operations. Confirmed dates: Senior ICT Assistant at UP Diliman–CSRC, College of Science, August 2026–present; the previous Project Staff role ended July 31, 2026. The résumé remains the source for responsibilities; the user's confirmed end date supplies day-level precision on the timeline.
+
+The navigation square follows the link with `aria-current="location"`; JavaScript updates it on selection, scrolling, resize, hash changes, and content-height changes. At the hero, no sidebar section is active. Reduced-motion preferences disable the indicator's short opacity/scale transition.
