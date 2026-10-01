@@ -1692,7 +1692,7 @@ a.social-link:hover, a.social-link:focus-visible { color: var(--accent); backgro
   }
   .about-photo {
     width:200px;
-    margin:0;
+    margin:0 auto;
   }
   .about-copy h2 {
     font-size:43px;
