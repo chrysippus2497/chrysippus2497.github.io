@@ -6,11 +6,11 @@ const projects = JSON.parse(readFileSync(new URL('projects.json', root), 'utf8')
 const escape = value => String(value).replace(/[&<>"']/g, char => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;' }[char]));
 const description = value => value.split(/<br\s*\/?\s*>/i).map(escape).join('<br>');
 const tags = (list, className = 'tech-list') => `<ul class="${className}">${list.map(tech => `<li>${escape(tech)}</li>`).join('')}</ul>`;
-function completeStack(p) {
+function completeStack(p, supportingOnly = false) {
   if (!p.techGroups) return tags(p.techList);
   const grouped = p.techGroups.flatMap(group => group.items);
   if (new Set(grouped).size !== grouped.length || grouped.length !== p.techList.length || p.techList.some(tech => !grouped.includes(tech))) throw new Error(`Incomplete technology groups: ${p.id}`);
-  return `<div class="project-stack-groups">${p.techGroups.map(group => `<div><h6>${escape(group.title)}</h6>${tags(group.items)}</div>`).join('')}</div>`;
+  return `<div class="project-stack-groups">${(supportingOnly ? p.techGroups.filter(group => group.items.some(tech => !p.primaryTech?.includes(tech))) : p.techGroups).map(group => `<div><h6>${escape(group.title)}</h6>${tags(group.items)}</div>`).join('')}</div>`;
 }
 function visual(p, i) {
   return `<a class="project-visual" href="${escape(p.imageSrc)}" data-title="${escape(p.title)}" aria-label="View screenshot of ${escape(p.title)}">
@@ -33,7 +33,7 @@ function card(p, i) {
     return `<article class="project case-study" id="project-${escape(p.id)}" data-category="${escape(p.category)}">
       <header class="case-heading"><p class="project-meta"><span class="project-number">${number}</span><span>${escape(p.type)}</span></p><h4 class="project-title">${escape(p.title)}</h4><p class="case-context">${escape(c.context)}</p></header>
       <div class="case-layout">${visual(p, i)}
-        <div class="case-narrative"><div><h5>Purpose</h5><p>${escape(c.purpose)}</p></div><div><h5>My contribution</h5><p>${escape(c.contribution)}</p></div>${tags(p.primaryTech || p.techList.slice(0, 4), 'stack-preview')}${links(p)}</div>
+        <div class="case-narrative"><div><h5>Purpose</h5><p>${escape(c.purpose)}</p></div><div><h5>My contribution</h5><p>${escape(c.contribution)}</p></div>${tags(p.primaryTech || p.techList.slice(0, 4), 'stack-preview')}${p.techGroups ? `<div class="case-stack-support">${completeStack(p, true)}</div>` : ''}${links(p)}</div>
       </div>
       <details class="project-details case-details"><summary>Implementation & complete project stack</summary>
         <div class="case-implementation">${c.implementation.map(item => `<div><h5>${escape(item.title)}</h5><p>${escape(item.description)}</p></div>`).join('')}</div>

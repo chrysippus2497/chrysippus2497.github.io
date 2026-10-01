@@ -2223,3 +2223,6 @@ a.social-link:hover, a.social-link:focus-visible { color: var(--accent); backgro
 
 .project-stack-groups { display:grid; gap:20px; }
 .project-stack-groups h6 { margin:0 0 8px; font:11px/1.5 var(--mono); color:var(--muted); }
+
+.case-stack-support { margin-block:4px 8px; }
+.case-stack-support .project-stack-groups { gap:12px; }

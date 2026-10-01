@@ -1,9 +1,11 @@
-# RA logo studies — selection pending
+# Interconnected RA studies — round 2, selection pending
 
-Open index.html for side-by-side light/dark comparisons at intended header size and actual 16px/32px tab sizes (100% browser zoom). The static SVG files are custom paths without font dependencies. Standalone SVGs follow the browser color scheme; the comparison explicitly renders both palettes.
+Open index.html for enlarged previews plus actual 76×38 header containers and 16×16 / 32×32 favicon studies in both portfolio palettes. Use 100% browser zoom. Custom vector paths, static previews, no font dependencies. Standalone SVGs follow browser color scheme.
 
-Recommended: Typographic RA for legible initials and strong small-size weight. Circuit RA emphasizes network paths; Negative-space RA emphasizes a square silhouette.
+- Relay: the R's leg folds into the A's rising left stroke; a square is integrated at the shared foot. Recommended for readable initials and an open, connected identity.
+- Keystone: a compact nested construction; the R's diagonal doubles as the A's right leg, with a square at the junction.
+- Forge: bold connected outlines; the R's diagonal broadens into the A's left foot with an inset square. Strongest at tiny sizes.
 
-No candidate is installed as the header or favicon. After the owner chooses a concept, refine and apply it to the current header, create a simplified theme-aware static SVG favicon, a 16/32/48px ICO, and a 180px Apple touch icon. Update current portfolio page references and verify loading at actual sizes. Leave V1 branding unchanged. Current tab SVGs are design studies, not final exports.
+The previous circuit, negative-space, and typographic SVG studies remain as historical files but are no longer the displayed concepts.
 
-No attached reference image was accessible in this request; the existing connected RA monogram was used as the starting reference.
+No candidate is installed as the header or favicon. After the owner selects a direction, refine the chosen identity and create/install a simplified static theme-aware SVG favicon, 16/32/48px ICO fallback, and 180px Apple touch icon. Preserve V1 branding. Current tab SVGs are design studies, not final favicon exports.
