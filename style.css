@@ -2212,7 +2212,9 @@ a.social-link:hover, a.social-link:focus-visible { color: var(--accent); backgro
 .brand:hover,.footer-brand:hover { opacity:.82; }
 .footer-brand { display:inline-flex; align-items:center; gap:12px; text-decoration:none; }
 .footer-monogram { display:block; width:62px; height:32px; flex:none; }
-.footer-identity .footer-wordmark { font:18px/1.2 var(--sans); letter-spacing:.025em; }
+/* Pair the geometric symbol with the existing Calibre heading face and quiet tracking. */
+.brand .brand-wordmark,.footer-identity .footer-wordmark { margin:0; color:var(--ink); font:600 20px/1.1 var(--sans); letter-spacing:.01em; text-transform:none; }
+.brand { gap:12px; }
 .footer-identity > span { display:block; margin-top:6px; }
 
 .project-stack-groups { display:grid; gap:20px; }
@@ -2220,3 +2222,12 @@ a.social-link:hover, a.social-link:focus-visible { color: var(--accent); backgro
 
 .case-stack-support { margin-block:4px 8px; }
 .case-stack-support .project-stack-groups { gap:12px; }
+
+/* Keep the full name legible beside the symbol without crowding mobile controls. */
+@media(max-width:600px) {
+  .navigation { grid-template-columns:minmax(0,1fr) auto; column-gap:12px; }
+  .nav-context { display:none; }
+  .brand { gap:8px; }
+  .brand-monogram { width:52px; height:28px; }
+  .brand .brand-wordmark { max-width:66px; font-size:18px; }
+}

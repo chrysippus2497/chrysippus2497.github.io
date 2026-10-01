@@ -1,5 +1,11 @@
 # V2 refinement and version archive QA
 
+## Calibre wordmark refinement — October 1, 2026
+
+- Preserved the approved geometric RA paths and paired both home links with the title-case Calibre semibold wordmark, using `0.01em` tracking. The narrow header stacks the name beside a smaller symbol; the footer keeps its horizontal pairing.
+- Browser checks passed in light/dark themes at 1440, 1024, 768, 601, 600, 390, and 320px: matching heading font, intended weight/spacing, identical header/footer paths, no horizontal overflow, and no overlap with header controls.
+- Refreshed desktop/mobile header/footer previews and visually inspected the pairings. Desktop/mobile Axe checks reported zero violations in both themes; no browser JavaScript errors. Branding/project generation checks, site/archive integrity, theme checks, and whitespace checks passed.
+
 Checked locally in Chrome on 2026-09-30 using a static HTTP server. Automated checks supplement visual and keyboard inspection; they are not accessibility certification.
 
 ## Current portfolio
