@@ -150,3 +150,8 @@ Rechecked 2026-09-30. Unavailable links are preserved as historical records, not
 - Captured header/footer screenshots in dark/light themes at 1440px and 390px and checked layout at 320px. Actual-size SVG and raster favicon previews were visually inspected; embedded light/dark SVG rendering and icon HTTP 200 loading confirmed. Preview files are at `design/brand-preview/`.
 - Asserted all ten CS Resources technologies are visibly rendered outside collapsed details, with frameworks, development tools, integrations, and email service grouped. Exact contribution wording is unchanged. No new technologies were added.
 - Verified unchanged navigation tracking, image grayscale/hover, back-to-top, network playback/pause, and accessible home links. No horizontal overflow, browser JavaScript errors, or Axe violations in tested desktop/mobile states. Branding generation, project generation, theme, integrity, V1 checksums, and whitespace checks pass.
+
+## Remove asymmetric page padding — October 1, 2026
+
+- Removed the JavaScript-only body right padding at all widths, restoring equal page gutters. The floating back-to-top control retains its 44px target and safe-area offsets without reserving a page-wide lane. This supersedes the reserved-lane behavior recorded above.
+- Browser checks passed in both themes at 320, 390, 600, 768, 1024, and 1440px: zero body right padding, centered navigation, no horizontal overflow, and working back-to-top visibility and return behavior under reduced motion. Inspected the mobile preview; site/archive integrity and whitespace checks passed.
