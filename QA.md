@@ -155,3 +155,9 @@ Rechecked 2026-09-30. Unavailable links are preserved as historical records, not
 
 - Removed the JavaScript-only body right padding at all widths, restoring equal page gutters. The floating back-to-top control retains its 44px target and safe-area offsets without reserving a page-wide lane. This supersedes the reserved-lane behavior recorded above.
 - Browser checks passed in both themes at 320, 390, 600, 768, 1024, and 1440px: zero body right padding, centered navigation, no horizontal overflow, and working back-to-top visibility and return behavior under reduced motion. Inspected the mobile preview; site/archive integrity and whitespace checks passed.
+
+## Font-independent interface icons — October 1, 2026
+
+- Replaced text arrow icons throughout the current portfolio, including the hero résumé action, menu, fallback navigation, screenshot captions, contact actions, and footer. Converted the related stack/operation glyphs to inline SVG as well. V1 remains unchanged.
+- Browser checks passed in both themes at 320, 390, 768, and 1440px: nonzero SVG dimensions, visible hero/menu résumé icons, decorative accessibility attributes, and no horizontal overflow. Mobile Axe scans reported zero violations in both themes. The hero icon also rendered with JavaScript disabled; the mobile preview was visually inspected.
+- Project/branding synchronization, site/archive integrity, and whitespace checks passed. These are Chrome responsive checks, not physical-device testing across every browser.

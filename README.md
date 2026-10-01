@@ -100,3 +100,7 @@ The contact area uses a clickable email link and a native Clipboard API action. 
 The hero tagline is “Building software. Connecting systems. Keeping services running.” It connects the development foundation with the current infrastructure responsibilities. The square navigation indicator and Let’s Connect contact area remain unchanged.
 
 The floating Back to top control appears whenever `window.scrollY > 0`, shares the scrollspy’s scheduled update, and respects reduced motion. The 44px control floats with safe-area offsets; it does not add body padding or narrow the centered page layout. Returning to the top moves focus to main content before the button hides. Without JavaScript, the control stays hidden.
+
+## Responsive interface icons
+
+Directional arrows in document links, actions, screenshot captions, and footer links use inline SVG with `currentColor`, explicit view boxes, and text-relative sizing. Stack and operation symbols also use SVG paths instead of font characters. Decorative icons are hidden from assistive technology and are not focusable; link text supplies their names. They need no icon font, external service, or JavaScript. Screenshot-caption icons are maintained in `scripts/build-projects.mjs`.

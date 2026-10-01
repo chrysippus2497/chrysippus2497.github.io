@@ -2230,3 +2230,8 @@ a.social-link:hover, a.social-link:focus-visible { color: var(--accent); backgro
   .brand-monogram { width:52px; height:28px; }
   .brand .brand-wordmark { max-width:66px; font-size:18px; }
 }
+
+/* Inline vector icons do not depend on platform font glyph coverage. */
+.ui-icon { display:inline-block; width:1em; height:1em; flex:none; vertical-align:-.125em; }
+.button > span { display:inline-flex; flex:none; }
+.image-caption .ui-icon { width:1.2em; height:1.2em; }
