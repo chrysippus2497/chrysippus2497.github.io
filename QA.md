@@ -96,3 +96,11 @@ Rechecked 2026-09-30. Unavailable links are preserved as historical records, not
 - Browser checks cover both themes at 1440, 1024, 768, 600, 390, and 320px. Complete device bounds and section-clearance assertions pass, with no horizontal overflow. Desktop/mobile Axe scans report zero violations in tested states. Visually inspected desktop and mobile topology, section connections, and simultaneous active/hover squares.
 - Verified request/response phase visibility, browser page reveal, global pause/resume for every animated element, and reduced-motion suppression. Existing IntersectionObserver pauses entire diagrams, including port lights and page reveals, when offscreen.
 - Content, career chronology, contact functionality, project data, résumé, and archive remain unchanged. Integrity, theme behavior, JavaScript syntax, and whitespace checks pass.
+
+## Project image and icon refinement
+
+- All eight project screenshots use image-only grayscale at rest and restore color on hover or visible keyboard focus, with a 350ms filter transition and existing reduced-motion support.
+- Generated website and GitHub icon links retain all original URLs, new-tab behavior, and safe rel attributes. Each has a destination-specific accessible name and native tooltip; profile URLs are accurately labeled as profiles. All targets are 44 × 44px with consistent spacing.
+- Footer email uses the shared social-link styling. Browser assertions confirm matching dimensions, padding, radius, background, color, and transitions across GitHub, CodePen, and email on hover and keyboard focus.
+- Checked all eight projects in dark/light themes at 1440, 390, and 320px, including grayscale, hover, focus, link metadata, and overflow. Desktop/mobile Axe scans report zero violations in tested states; visually inspected project and footer captures. Generator consistency, site integrity, theme checks, and whitespace checks pass.
+- Network artwork, navigation indicators, career content, project records, and archive remain unchanged.

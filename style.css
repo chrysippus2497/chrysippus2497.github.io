@@ -660,10 +660,13 @@ p {
   width:100%;
   height:auto;
   box-shadow:var(--image-shadow);
-  transition:transform .35s;
+  filter:grayscale(1);
+  transition:transform .35s, filter .35s;
 }
 
-.project-visual:hover img {
+.project-visual:hover img,
+.project-visual:focus-visible img {
+  filter:grayscale(0);
   transform:scale(1.025);
 }
 
@@ -1399,7 +1402,7 @@ a.social-link {
   border: 1px solid transparent;
   transition: color .2s, background .2s, border-color .2s;
 }
-a.social-link:hover { color: var(--accent); background: var(--surface-raised); border-color: var(--border); text-decoration: none; }
+a.social-link:hover, a.social-link:focus-visible { color: var(--accent); background: var(--surface-raised); border-color: var(--border); text-decoration: none; }
 .menu-socials, .contact-links { align-items: center; gap: 8px; }
 .document-link { margin-left: 10px; padding-left: 20px; border-left: 1px solid var(--border); gap: 12px; }
 .document-link span { color: var(--accent); }
@@ -2190,3 +2193,6 @@ a.social-link:hover { color: var(--accent); background: var(--surface-raised); b
   .js .network-art .network-motion { animation-duration:28s; }
 }
 @media(prefers-reduced-motion:reduce) { .node-arrival { display:none; } }
+
+/* Shared 44px icon targets across case studies and compact project cards. */
+.project-links, .case-narrative .project-links { gap:8px; }
