@@ -18,7 +18,7 @@ const touch=`<svg xmlns="http://www.w3.org/2000/svg" width="180" height="180" vi
 const fallback=`<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" style="color:#292b28;--brand-accent:#b65f3f"><rect width="64" height="64" rx="6" fill="#f4f1e9"/><g transform="translate(3 17) scale(.078)">${small}</g></svg>`;
 const outputs={'images/brand/ra-offset.svg':full,'images/brand/favicon.svg':favicon,'images/brand/apple-touch-source.svg':touch,'images/brand/favicon-fallback-source.svg':fallback};
 const path=new URL('index.html',root);let html=readFileSync(path,'utf8');
-html=html.replace(/<a class="brand"[\s\S]*?<\/a>/,`<a class="brand" href="#home" aria-label="Rafael Aquino — Home" title="Rafael Aquino — Home">${symbol('brand-monogram')}<span class="brand-wordmark">Rafael Aquino</span></a>`);
+html=html.replace(/<a class="brand"[\s\S]*?<\/a>/,`<a class="brand" href="#home" aria-label="Rafael Aquino — Home" title="Rafael Aquino — Home">${symbol('brand-monogram')}</a>`);
 html=html.replace(/<div class="footer-identity">[\s\S]*?<\/div>/,`<div class="footer-identity"><a class="footer-brand" href="#home" aria-label="Rafael Aquino — Home">${symbol('footer-monogram',62,32)}<span class="footer-wordmark">Rafael Aquino</span></a><span>Network, Systems &amp; Software</span></div>`);
 outputs['index.html']=html;
 for(const [file,content] of Object.entries(outputs)){const target=new URL(file,root);if(process.argv.includes('--check')){if(readFileSync(target,'utf8')!==content)throw new Error(`Branding out of sync: ${file}`);}else writeFileSync(target,content);}
