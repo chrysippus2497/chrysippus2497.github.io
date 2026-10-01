@@ -2220,3 +2220,6 @@ a.social-link:hover, a.social-link:focus-visible { color: var(--accent); backgro
 @keyframes brand-arrival { 0%,60%,100% { opacity:0; } 72% { opacity:.65; } }
 
 @keyframes brand-node-light { 0%,60%,100% { filter:none; } 72% { filter:drop-shadow(0 0 2px var(--accent)); } }
+
+.project-stack-groups { display:grid; gap:20px; }
+.project-stack-groups h6 { margin:0 0 8px; font:11px/1.5 var(--mono); color:var(--muted); }

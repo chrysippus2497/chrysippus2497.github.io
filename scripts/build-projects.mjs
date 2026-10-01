@@ -6,6 +6,12 @@ const projects = JSON.parse(readFileSync(new URL('projects.json', root), 'utf8')
 const escape = value => String(value).replace(/[&<>"']/g, char => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;' }[char]));
 const description = value => value.split(/<br\s*\/?\s*>/i).map(escape).join('<br>');
 const tags = (list, className = 'tech-list') => `<ul class="${className}">${list.map(tech => `<li>${escape(tech)}</li>`).join('')}</ul>`;
+function completeStack(p) {
+  if (!p.techGroups) return tags(p.techList);
+  const grouped = p.techGroups.flatMap(group => group.items);
+  if (new Set(grouped).size !== grouped.length || grouped.length !== p.techList.length || p.techList.some(tech => !grouped.includes(tech))) throw new Error(`Incomplete technology groups: ${p.id}`);
+  return `<div class="project-stack-groups">${p.techGroups.map(group => `<div><h6>${escape(group.title)}</h6>${tags(group.items)}</div>`).join('')}</div>`;
+}
 function visual(p, i) {
   return `<a class="project-visual" href="${escape(p.imageSrc)}" data-title="${escape(p.title)}" aria-label="View screenshot of ${escape(p.title)}">
     <picture><source type="image/webp" srcset="${escape(p.imageSmall)} 640w, ${escape(p.imageWebp)} ${Math.min(p.width, 1280)}w" sizes="(max-width: 600px) 85vw, (max-width: 900px) ${p.featured ? '85vw' : '42vw'}, ${p.featured ? '720px' : '550px'}"><img src="${escape(p.imageSrc)}" alt="${escape(p.title)} — ${escape(p.summary)}" width="${p.width}" height="${p.height}" loading="lazy" decoding="async"></picture>
@@ -27,11 +33,11 @@ function card(p, i) {
     return `<article class="project case-study" id="project-${escape(p.id)}" data-category="${escape(p.category)}">
       <header class="case-heading"><p class="project-meta"><span class="project-number">${number}</span><span>${escape(p.type)}</span></p><h4 class="project-title">${escape(p.title)}</h4><p class="case-context">${escape(c.context)}</p></header>
       <div class="case-layout">${visual(p, i)}
-        <div class="case-narrative"><div><h5>Purpose</h5><p>${escape(c.purpose)}</p></div><div><h5>My contribution</h5><p>${escape(c.contribution)}</p></div>${tags(p.techList.slice(0, 4), 'stack-preview')}${links(p)}</div>
+        <div class="case-narrative"><div><h5>Purpose</h5><p>${escape(c.purpose)}</p></div><div><h5>My contribution</h5><p>${escape(c.contribution)}</p></div>${tags(p.primaryTech || p.techList.slice(0, 4), 'stack-preview')}${links(p)}</div>
       </div>
       <details class="project-details case-details"><summary>Implementation & complete project stack</summary>
         <div class="case-implementation">${c.implementation.map(item => `<div><h5>${escape(item.title)}</h5><p>${escape(item.description)}</p></div>`).join('')}</div>
-        <div class="case-record"><div><h5>Project context</h5><p class="project-description">${description(p.description)}</p></div><div><h5>Project stack</h5>${tags(p.techList)}</div></div>
+        <div class="case-record"><div><h5>Project context</h5><p class="project-description">${description(p.description)}</p></div><div><h5>Project stack</h5>${completeStack(p)}</div></div>
       </details>
     </article>`;
   }
@@ -40,8 +46,8 @@ function card(p, i) {
       <p class="project-meta"><span class="project-number">${number}</span><span>${escape(p.type)}</span></p>
       <h4 class="project-title">${escape(p.title)}</h4><p class="project-summary">${escape(p.summary)}</p>
       <p class="contribution"><span>My contribution</span>${escape(p.contribution)}</p>
-      ${tags(p.techList.slice(0, 4), 'stack-preview')}
-      <details class="project-details"><summary>Project context & complete stack</summary><p class="project-description">${description(p.description)}</p><h5>Project stack</h5>${tags(p.techList)}</details>
+      ${tags(p.primaryTech || p.techList.slice(0, 4), 'stack-preview')}
+      <details class="project-details"><summary>Project context & complete stack</summary><p class="project-description">${description(p.description)}</p><h5>Project stack</h5>${completeStack(p)}</details>
       ${links(p)}
     </div>
   </article>`;

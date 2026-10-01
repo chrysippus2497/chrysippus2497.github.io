@@ -5,8 +5,8 @@
     "projectLink": "https://csresourcesequipment.com",
     "description": "The CS Resources & Equipment Database is a web-based system built for the University of the Philippines Diliman – College of Science (UPD-CS). It provides a centralized platform for managing, monitoring, and sharing equipment across laboratories and institutes. Designed to promote sustainability, accountability, and inter-institute collaboration, the system enables faculty members to efficiently access, track, and manage institutional resources.",
     "techList": [
-      "Tailwind",
-      "Alpine",
+      "Tailwind CSS",
+      "Alpine.js",
       "Laravel",
       "Livewire",
       "Filament",
@@ -14,7 +14,7 @@
       "Postman",
       "GitHub Desktop",
       "Google reCAPTCHA",
-      "Gmail SMTP Mail Server"
+      "Gmail SMTP"
     ],
     "githubLink": "https://github.com/chrysippus2497/",
     "externalLink": "https://csresourcesequipment.com",
@@ -46,7 +46,46 @@
           "description": "Server checks, backups, database maintenance, and user support as part of administering the College’s institutional platforms."
         }
       ]
-    }
+    },
+    "primaryTech": [
+      "Tailwind CSS",
+      "Alpine.js",
+      "Laravel",
+      "Livewire",
+      "Filament"
+    ],
+    "techGroups": [
+      {
+        "title": "Frameworks & libraries",
+        "items": [
+          "Tailwind CSS",
+          "Alpine.js",
+          "Laravel",
+          "Livewire",
+          "Filament"
+        ]
+      },
+      {
+        "title": "Development tools",
+        "items": [
+          "Postman",
+          "GitHub Desktop"
+        ]
+      },
+      {
+        "title": "Integrations",
+        "items": [
+          "Pusher",
+          "Google reCAPTCHA"
+        ]
+      },
+      {
+        "title": "Email service",
+        "items": [
+          "Gmail SMTP"
+        ]
+      }
+    ]
   },
   {
     "title": "CS Centralized Portal",
