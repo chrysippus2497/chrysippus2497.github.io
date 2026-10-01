@@ -1,3 +1,7 @@
+# Archived studies — Offset identity selected
+
+The supplied Offset reference supersedes these concepts. See `../brand-preview/` for the implemented identity and `../../images/brand/` for exports. V1 remains unchanged.
+
 # Interconnected RA studies — round 2, selection pending
 
 Open index.html for enlarged previews plus actual 76×38 header containers and 16×16 / 32×32 favicon studies in both portfolio palettes. Use 100% browser zoom. Custom vector paths, static previews, no font dependencies. Standalone SVGs follow browser color scheme.
