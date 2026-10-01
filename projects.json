@@ -31,7 +31,7 @@
     "caseStudy": {
       "context": "University of the Philippines Diliman · College of Science",
       "purpose": "Give faculty a central place to access, monitor, and share laboratory equipment across institutes.",
-      "contribution": "Supported development, interface improvements, and ongoing maintenance of the database. Later responsibilities included system administration and technical support for its users.",
+      "contribution": "Developed the CS Resources & Equipment Database, including its backend functionality, user interface, and database structure.",
       "implementation": [
         {
           "title": "Resource workflows",

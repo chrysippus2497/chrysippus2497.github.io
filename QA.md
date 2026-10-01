@@ -117,3 +117,9 @@ Rechecked 2026-09-30. Unavailable links are preserved as historical records, not
 - Desktop/mobile Axe scans report zero violations in tested states; no browser JavaScript errors or failed local resource requests. Metadata, canonical URL, JSON-LD, archive integrity, theme behavior, and syntax/whitespace checks pass.
 - Cold local mobile initial load: 8 asset requests, approximately 166 KB transferred excluding HTML; local DOMContentLoaded measured 45–115ms. These are unthrottled local observations, not production Core Web Vitals. Screenshots are lazy-loaded with responsive image variants.
 - External URLs were re-audited with bounded GET requests. Previous audit findings remain: four project domains do not resolve, PWise times out, Aimporo returns 402, six repository URLs return 404, and HNHS is parked. Aqua Pura returns 200 but identity is unconfirmed; CodePen blocks automated access (403); GitHub profile returns 200. Existing historical URLs and the availability notice are preserved. The material follow-up is to supply confirmed replacement demos/public repositories or intentionally retire obsolete destinations.
+
+## RA monogram and contribution wording
+
+- CS Resources & Equipment Database contribution now exactly matches the owner-supplied sentence in both projects.json and generated markup.
+- Header uses a custom inline SVG RA monogram with a shared crossbar, a network extension, and an accent square. Hover/visible keyboard focus plays a single 1.2-second packet/arrival sequence; reduced motion leaves the mark static. The top link has the exact accessible name “Rafael Aquino — Home.”
+- Inspected both themes at 1440, 390, and 320px. Header elements remain separated, with no horizontal overflow. Verified exact contribution text, home navigation, keyboard focus, animation phases, and reduced motion. Desktop/mobile Axe scans report no violations in tested states; generator, integrity, theme, and whitespace checks pass.
