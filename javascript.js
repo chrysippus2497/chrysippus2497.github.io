@@ -26,6 +26,13 @@
   const navigation = document.getElementById('nav-links');
   const menuDialog = document.getElementById('navigation-panel');
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const backToTop = document.querySelector('.back-to-top');
+  backToTop.addEventListener('click', () => {
+    // Keep keyboard focus useful after this control disappears at the top.
+    document.getElementById('main-content').focus({ preventScroll: true });
+    window.scrollTo({ top: 0, behavior: reducedMotion.matches ? 'instant' : 'smooth' });
+  });
+  window.addEventListener('pageshow', () => { backToTop.hidden = window.scrollY <= 0; });
   const motionToggle = document.querySelector('.motion-toggle');
   const root = document.documentElement;
   const updateMotionControl = () => { motionToggle.hidden = reducedMotion.matches; };
@@ -195,6 +202,7 @@
     document.getElementById('nav-position').textContent = current ? `${String(sectionLinks.indexOf(current)).padStart(2, '0')} / ${sectionCount}` : `Index / ${sectionCount}`;
   }
   function updateNavigation() {
+    backToTop.hidden = window.scrollY <= 0;
     const atBottom = Math.ceil(window.scrollY + window.innerHeight) >= document.documentElement.scrollHeight - 2;
     const current = atBottom ? sectionLinks.at(-1) : sectionLinks.filter(link => document.querySelector(link.hash).getBoundingClientRect().top <= 140).at(-1);
     markCurrentSection(current);

@@ -98,3 +98,5 @@ The active navigation indicator is an 8px filled square at the far right of the 
 The contact area uses a clickable email link and a native Clipboard API action. Successful copies announce “Email copied.” briefly through a live status region. Denied or unavailable clipboard access selects the address and offers a manual-copy instruction; the email link works without JavaScript.
 
 The hero tagline is “Building software. Connecting systems. Keeping services running.” It connects the development foundation with the current infrastructure responsibilities. The square navigation indicator and Let’s Connect contact area remain unchanged.
+
+The floating Back to top control appears whenever `window.scrollY > 0`, shares the scrollspy’s scheduled update, and respects reduced motion. A reserved right-side lane and safe-area offsets keep its 44px target clear of content and footer links. Returning to the top moves focus to main content before the button hides. Without JavaScript, the control stays hidden.
